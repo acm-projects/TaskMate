@@ -76,7 +76,7 @@ Tutorials:
 
 
 [How to implement push notifications with Flutter and Firebase Cloud Messaging](https://www.youtube.com/watch?v=AUU6gbDni4Q)  
-[Working with CRUD and REST API's](https://www.youtube.com/watch?v=ErP_xomHKTw)
+[Working with Firebase CRUD and REST API's](https://www.youtube.com/watch?v=ErP_xomHKTw)
 
     
 
