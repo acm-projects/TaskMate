@@ -102,7 +102,6 @@ Quick Read :)
 | get commit hash then **git reset --hard 2f5451f** | Undo commit (not pushed) and *remove*  changes |
 
 ## Developers 👥
-Devansh Agrawal    
 Shrimoy Satpathy   
 Jasper Yin    
 Zubiya Syeda   
