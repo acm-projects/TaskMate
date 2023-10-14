@@ -61,6 +61,15 @@ class IntroPage extends StatelessWidget {
                 ),
               ),
               child: ElevatedButton(
+              onPressed: (){
+                Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SignIn()),
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.black,
+              ),
               child: Text(
                 "Get Started",
                 textAlign: TextAlign.center,
@@ -71,15 +80,6 @@ class IntroPage extends StatelessWidget {
                   fontWeight: FontWeight.w400,
                   height: 0,
                 ),
-              ),
-              onPressed: (){
-                Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const SignIn()),
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.black,
               ),
               ),
             ),
