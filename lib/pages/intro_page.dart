@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:task_mate/components/logo.dart';
 import 'package:task_mate/pages/signin_page.dart';
 
 class IntroPage extends StatelessWidget {
@@ -23,18 +24,8 @@ class IntroPage extends StatelessWidget {
             ),
             //Logo
             Padding(
-              padding: EdgeInsets.only(top:343.0),
-              child: Text(
-                'TaskMate',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                color: Colors.black,
-                fontSize: 48,
-                fontFamily: 'Jockey One',
-                fontWeight: FontWeight.w400,
-                height: 0,
-                ),
-              ),
+              padding: EdgeInsets.only(top: 343.0),
+              child: Logo(),
             ),
             Text(
               'Turn your to-dos into ta-das',
@@ -64,7 +55,7 @@ class IntroPage extends StatelessWidget {
               onPressed: (){
                 Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const SignIn()),
+                MaterialPageRoute(builder: (context) => SignInPage()),
                 );
               },
               style: ElevatedButton.styleFrom(

@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: const IntroPage(),
       routes: {
-        '/signin_page.dart': (context)=>const SignIn(),
+        '/signin_page.dart': (context)=> SignInPage(),
         },
     );
   }
