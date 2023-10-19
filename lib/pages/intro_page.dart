@@ -10,7 +10,14 @@ class IntroPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body:DecoratedBox(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+                image: AssetImage("lib/images/GroupCorner.png"), 
+                fit: BoxFit.cover
+          ),
+         ),
+      child: Center(
         child: Column(
           children: [
             //Background Image
@@ -87,6 +94,7 @@ class IntroPage extends StatelessWidget {
                 ),
             ),
           ],),
+      )
       )
     );
   }
