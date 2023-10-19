@@ -5,7 +5,6 @@ import 'package:task_mate/components/header_logo.dart';
 import 'package:task_mate/components/mybutton.dart';
 import 'package:task_mate/components/textfield1.dart';
 
-
 class SignInPage extends StatelessWidget {
   SignInPage({super.key});
 
@@ -21,7 +20,8 @@ class SignInPage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Center(
-          child: Column(children: [
+          child: Column(
+            children: [
             //logo
             const HeaderLogo(),
 
@@ -77,14 +77,27 @@ class SignInPage extends StatelessWidget {
 
             const SizedBox(height: 30),
 
-            MyButton(
-              //onTap: signUserIn,
+            const MyButton(
+                //onTap: signUserIn,
             ),
 
+            const SizedBox(height: 50),
 
+            Container(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                width: 306,
+                height: 306,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('lib/images/signinpic.png'),
+                  ),
+                ),
+              )
+            ),
           ]),
         ),
-      ),
+      )
     );
   }
 }
