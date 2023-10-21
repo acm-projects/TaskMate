@@ -49,6 +49,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '1071845027758',
     projectId: 'taskmate-77545',
     authDomain: 'taskmate-77545.firebaseapp.com',
+    databaseURL: 'https://taskmate-77545-default-rtdb.firebaseio.com/',
     storageBucket: 'taskmate-77545.appspot.com',
     measurementId: 'G-4YQ722519X',
   );
