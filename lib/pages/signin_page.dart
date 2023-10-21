@@ -5,7 +5,6 @@ import 'package:task_mate/components/header_logo.dart';
 import 'package:task_mate/components/mybutton.dart';
 import 'package:task_mate/components/textfield1.dart';
 
-
 class SignInPage extends StatelessWidget {
   SignInPage({super.key});
 
@@ -19,72 +18,83 @@ class SignInPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Center(
-          child: Column(children: [
-            //logo
-            const HeaderLogo(),
+        body: SafeArea(
+      child: Center(
+        child: Column(children: [
+          //logo
+          const HeaderLogo(),
 
-            const SizedBox(height: 50),
+          const SizedBox(height: 50),
 
-            //sign in text
-            const Text(
-              'Sign In',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 40,
-                fontFamily: 'Jockey One',
-                fontWeight: FontWeight.w400,
-                height: 0,
-              ),
+          //sign in text
+          const Text(
+            'Sign In',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 40,
+              fontFamily: 'Jockey One',
+              fontWeight: FontWeight.w400,
+              height: 0,
             ),
+          ),
 
-            const SizedBox(height: 30),
+          const SizedBox(height: 30),
 
-            //email text field
-            TextField1(
-              controller: emailController,
-              hintText: 'Email',
-              obscureText: false,
+          //email text field
+          TextField1(
+            controller: emailController,
+            hintText: 'Email',
+            obscureText: false,
+          ),
+
+          const SizedBox(height: 30),
+
+          //password text field
+          TextField1(
+            controller: passwordController,
+            hintText: 'Password',
+            obscureText: true,
+          ),
+
+          //forgot password?
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 48,
+              vertical: 7,
             ),
-
-            const SizedBox(height: 30),
-
-            //password text field
-            TextField1(
-              controller: passwordController,
-              hintText: 'Password',
-              obscureText: true,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  'Forgot Password?',
+                  style: TextStyle(color: Colors.grey[600]),
+                ),
+              ],
             ),
+          ),
 
-            //forgot password?
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 48,
-                vertical: 7,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text(
-                    'Forgot Password?',
-                    style: TextStyle(color: Colors.grey[600]),
-                  ),
-                ],
-              ),
-            ),
+          const SizedBox(height: 30),
 
-            const SizedBox(height: 30),
-
-            const MyButton(
+          MyButton(
               //onTap: signUserIn,
-            ),
+              ),
 
+          const SizedBox(height: 50),
 
-          ]),
-        ),
+          Container(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                width: 306,
+                height: 306,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('lib/images/signinpic.png'),
+                  ),
+                ),
+              )),
+        ]),
       ),
-    );
+    ));
   }
 }
