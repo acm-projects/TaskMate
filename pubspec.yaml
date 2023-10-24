@@ -64,7 +64,6 @@ flutter:
   assets:
       - lib/images/BckImg.jpg
       - lib/images/CornerBckImg.jpg
-      - lib/images/Logo.png
       - lib/images/Background Gradient.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg

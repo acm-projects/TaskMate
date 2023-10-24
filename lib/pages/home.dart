@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:task_mate/components/header_logo.dart';
-import 'package:task_mate/components/logo.dart';
 import 'package:task_mate/pages/intro_page.dart';
 
 class Home extends StatelessWidget {
@@ -29,7 +28,7 @@ class Home extends StatelessWidget {
       child: Center(
         child: Column(
           children: [
-            const HeaderLogo(),
+            HeaderLogo(),
           ],
         ),
       )
