@@ -20,15 +20,6 @@ class IntroPage extends StatelessWidget {
       child: Center(
         child: Column(
           children: [
-            //Background Image
-            Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('images/Background Gradient.png'), // Update with your image path
-                  fit: BoxFit.cover, // You can adjust the fit as needed
-                ),
-              ),
-            ),
             //Logo
             Padding(
               padding: EdgeInsets.only(top:343.0),

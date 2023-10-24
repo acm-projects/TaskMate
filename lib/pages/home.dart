@@ -9,7 +9,7 @@ class Home extends StatelessWidget {
     Future.delayed(Duration(seconds: 5), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => IntroPage()),
+        MaterialPageRoute(builder: (context) => const IntroPage()),
       );
     });
   }
@@ -21,7 +21,7 @@ class Home extends StatelessWidget {
       body: DecoratedBox(
         decoration: BoxDecoration(
           image: DecorationImage(
-                image: AssetImage("lib/images/Background Gradient.png"), 
+                image: AssetImage("lib/images/BckImg.jpg"), 
                 fit: BoxFit.contain
           ),
          ),
