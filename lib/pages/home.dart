@@ -6,7 +6,7 @@ class Home extends StatelessWidget {
   const Home({super.key});
 
   void navigateToNextPage(BuildContext context) {
-    Future.delayed(Duration(seconds: 5), () {
+    Future.delayed(const Duration(seconds: 5), () {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => const IntroPage()),

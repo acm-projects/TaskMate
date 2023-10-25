@@ -64,7 +64,7 @@ flutter:
   assets:
       - lib/images/BckImg.jpg
       - lib/images/CornerBckImg.jpg
-      - lib/images/BckGrdProfile.png
+      #- lib/images/BckGrdProfile.png
       - lib/images/GraphicProfile.png
       - lib/images/profile.png
   #   - images/a_dot_burr.jpeg

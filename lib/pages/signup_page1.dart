@@ -3,7 +3,7 @@ import 'package:task_mate/components/header_logo.dart';
 
 
 class SignUpPage1 extends StatelessWidget {
-  SignUpPage1({super.key});
+  const SignUpPage1({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class SignUpPage1 extends StatelessWidget {
       appBar: AppBar(
         
         title: const HeaderLogo(),
-        iconTheme: IconThemeData(
+        iconTheme: const IconThemeData(
           color: Colors.black, //change your color here
         ),
 
