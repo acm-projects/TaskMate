@@ -21,7 +21,7 @@ class Home extends StatelessWidget {
       body: DecoratedBox(
         decoration: BoxDecoration(
           image: DecorationImage(
-                image: AssetImage("/lib/images/BckImg.jpg"), 
+                image: AssetImage("lib/images/BckImg.jpg"), 
                 fit: BoxFit.contain
           ),
          ),
