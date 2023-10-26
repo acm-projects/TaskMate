@@ -1,3 +1,4 @@
+import 'package:task_mate/pages/intro_page.dart';
 import 'package:task_mate/pages/signup_page2.dart';
 import 'package:flutter/material.dart';
 import 'package:task_mate/components/header_logo.dart';
@@ -12,8 +13,16 @@ class SignUpPage1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          leading: const Icon(
-            Icons.arrow_back,
+          leading: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => IntroPage()),
+              );
+            },
+            child: const Icon(
+              Icons.arrow_back,
+            ),
           ),
           title: const HeaderLogo(),
           iconTheme: const IconThemeData(
