@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:task_mate/components/header_logo.dart';
 import 'package:task_mate/components/textfield1.dart';
 import 'package:task_mate/pages/home.dart';
+import 'package:task_mate/pages/signup_page3.dart';
 
 class SignUpPage4 extends StatelessWidget {
   SignUpPage4({super.key});
@@ -12,8 +13,16 @@ class SignUpPage4 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          leading: const Icon(
-            Icons.arrow_back,
+          leading: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SignUpPage3()),
+              );
+            },
+            child: const Icon(
+              Icons.arrow_back,
+            ),
           ),
           title: const HeaderLogo(),
           iconTheme: const IconThemeData(

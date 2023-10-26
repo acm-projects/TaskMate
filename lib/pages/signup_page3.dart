@@ -3,6 +3,7 @@ import 'package:task_mate/components/header_logo.dart';
 import 'package:task_mate/components/textfield1.dart';
 import 'package:task_mate/pages/home.dart';
 import 'package:task_mate/pages/signup_page4.dart';
+import 'package:task_mate/pages/signup_page2.dart';
 
 class SignUpPage3 extends StatelessWidget {
   SignUpPage3({super.key});
@@ -13,8 +14,16 @@ class SignUpPage3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          leading: const Icon(
-            Icons.arrow_back,
+          leading: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SignUpPage2()),
+              );
+            },
+            child: const Icon(
+              Icons.arrow_back,
+            ),
           ),
           title: const HeaderLogo(),
           iconTheme: const IconThemeData(
