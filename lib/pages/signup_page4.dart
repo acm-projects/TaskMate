@@ -1,10 +1,10 @@
-import 'package:task_mate/pages/signup_page2.dart';
 import 'package:flutter/material.dart';
 import 'package:task_mate/components/header_logo.dart';
 import 'package:task_mate/components/textfield1.dart';
+import 'package:task_mate/pages/home.dart';
 
-class SignUpPage1 extends StatelessWidget {
-  SignUpPage1({super.key});
+class SignUpPage4 extends StatelessWidget {
+  SignUpPage4({super.key});
 
   final signupcontroller = TextEditingController();
 
@@ -29,7 +29,7 @@ class SignUpPage1 extends StatelessWidget {
           children: [
             const SizedBox(height: 30),
             const Text(
-              'What\'s your name?',
+              'Enter a password',
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Colors.black,
@@ -42,15 +42,15 @@ class SignUpPage1 extends StatelessWidget {
             const SizedBox(height: 30),
             TextField1(
               controller: signupcontroller,
-              hintText: 'Name',
-              obscureText: false,
+              hintText: 'Password',
+              obscureText: true,
             ),
             const SizedBox(height: 30),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SignUpPage2()),
+                  MaterialPageRoute(builder: (context) => Home()),
                 );
               },
               style: ElevatedButton.styleFrom(
