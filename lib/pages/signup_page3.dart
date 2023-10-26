@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:task_mate/components/header_logo.dart';
 import 'package:task_mate/components/textfield1.dart';
 import 'package:task_mate/pages/home.dart';
+import 'package:task_mate/pages/signup_page2.dart';
 import 'package:task_mate/pages/signup_page4.dart';
 import 'package:task_mate/pages/signup_page2.dart';
 

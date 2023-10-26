@@ -1,5 +1,7 @@
 import 'package:task_mate/pages/signup_page1.dart';
 import 'package:task_mate/pages/signup_page3.dart';
+import 'package:task_mate/pages/signup_page1.dart';
+
 import 'package:flutter/material.dart';
 import 'package:task_mate/components/header_logo.dart';
 import 'package:task_mate/components/textfield1.dart';
