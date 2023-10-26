@@ -4,6 +4,7 @@ import 'package:task_mate/components/textfield1.dart';
 import 'package:task_mate/pages/home.dart';
 import 'package:task_mate/pages/signup_page2.dart';
 import 'package:task_mate/pages/signup_page4.dart';
+import 'package:task_mate/pages/signup_page2.dart';
 
 class SignUpPage3 extends StatelessWidget {
   SignUpPage3({super.key});

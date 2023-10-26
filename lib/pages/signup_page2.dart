@@ -1,3 +1,4 @@
+import 'package:task_mate/pages/signup_page1.dart';
 import 'package:task_mate/pages/signup_page3.dart';
 import 'package:task_mate/pages/signup_page1.dart';
 
