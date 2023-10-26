@@ -28,7 +28,20 @@ class Home extends StatelessWidget {
       child: Center(
         child: Column(
           children: [
-            HeaderLogo(),
+            Padding(
+              padding: EdgeInsets.only(top: 350),
+              child: Text(
+                  'TaskMate',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 48,
+                    fontFamily: 'Jockey One',
+                    fontWeight: FontWeight.w400,
+                    height: 0,
+                  ),
+                ),
+            ),
           ],
         ),
       )
