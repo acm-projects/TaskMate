@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:task_mate/components/header_logo.dart';
 import 'package:task_mate/components/textfield1.dart';
 import 'package:task_mate/pages/home.dart';
+import 'package:task_mate/pages/profile_page.dart';
 import 'package:task_mate/pages/signup_page3.dart';
 
 class SignUpPage4 extends StatelessWidget {
@@ -59,7 +60,7 @@ class SignUpPage4 extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Home()),
+                  MaterialPageRoute(builder: (context) => ProfilePage()),
                 );
               },
               style: ElevatedButton.styleFrom(
