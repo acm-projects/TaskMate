@@ -14,6 +14,7 @@ class ProfilePage extends StatelessWidget {
           ),
         ),
         child: SafeArea(
+          child: SingleChildScrollView(
           child: Center(
             child: Column(
               children: [
@@ -284,7 +285,6 @@ class ProfilePage extends StatelessWidget {
                 const SizedBox(height: 16),
                 Container(
                   width: 327,
-                  height: 141,
                   padding: EdgeInsets.all(15),
                   clipBehavior: Clip.antiAlias,
                   decoration: ShapeDecoration(
@@ -301,12 +301,12 @@ class ProfilePage extends StatelessWidget {
                       )
                     ],
                   ),
-                  child: const Center(
+                  child: Center(
                       child: Column(
                     children: [
                       Row(
                         children: [
-                          const SizedBox(height: 16),
+                          SizedBox(height: 16),
                           Text(
                             'Achievements',
                             style: TextStyle(
@@ -320,7 +320,7 @@ class ProfilePage extends StatelessWidget {
                         ],
                       ),
                       SizedBox(height: 5),
-                      Row(
+                      const Row(
                         children: [
                           Text(
                             '2 Badges',
@@ -334,17 +334,216 @@ class ProfilePage extends StatelessWidget {
                           ),
                         ],
                       ),
-                      SizedBox(height: 5),
-                    
+                      const SizedBox(height: 5),
+                      Container(
+                          margin: const EdgeInsets.only(
+                              top: 10.0), // Adjust the margin as needed
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Container(
+                                height: 39, // Set the desired height
+                                child: Image.asset('lib/images/badge.png'),
+                              ),
+                              Container(
+                                height: 39, // Set the desired height
+                                child: Image.asset('lib/images/badge2.png'),
+                              ),
+                              Container(
+                                height: 39, // Set the desired height
+                                child: Image.asset('lib/images/badge.png'),
+                              ),
+                              Container(
+                                height: 39, // Set the desired height
+                                child: Image.asset('lib/images/badge2.png'),
+                              ),
+                              Container(
+                                height: 39, // Set the desired height
+                                child: Image.asset('lib/images/badge.png'),
+                              ),
+                            ],
+                          )),
+                      
                     ],
                   )),
-                )
+                ),
 
                 // Memories
+                const SizedBox(height: 16),
+                Container(
+                  width: 327,
+                  padding: EdgeInsets.all(15),
+                  clipBehavior: Clip.antiAlias,
+                  decoration: ShapeDecoration(
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    shadows: const [
+                      BoxShadow(
+                        color: Color(0x3F000000),
+                        blurRadius: 4,
+                        offset: Offset(0, 4),
+                        spreadRadius: 0,
+                      )
+                    ],
+                  ),
+                  child: Center(
+                      child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          SizedBox(height: 16),
+                          Text(
+                            'Memories',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 14,
+                              fontFamily: 'Roboto',
+                              fontWeight: FontWeight.w400,
+                              height: 0.10,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 5),
+                      const Row(
+                        children: [
+                          Text(
+                            'You have ten posts',
+                            style: TextStyle(
+                              color: Color(0xFF808080),
+                              fontSize: 12,
+                              fontFamily: 'Roboto',
+                              fontWeight: FontWeight.w400,
+                              height: 0.11,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 5),
+                      Container(
+                          margin: const EdgeInsets.only(
+                              top: 10.0), // Adjust the margin as needed    
+                          child: Column(
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Container(
+                                    width: 45,
+                                    height: 75, // Set the desired height
+                                    decoration: BoxDecoration(
+                                      color: const Color.fromARGB(221, 170, 170, 170),
+                                      borderRadius: BorderRadius.circular(3),
+                                    ),
+                                    child: Image.asset('lib/images/tasks1.JPG'),
+                                  ),
+                                  Container(
+                                    width: 45,
+                                    height: 75, // Set the desired height
+                                    decoration: BoxDecoration(
+                                      color: const Color.fromARGB(221, 170, 170, 170),
+                                      borderRadius: BorderRadius.circular(3),
+                                    ),
+                                    child: Image.asset('lib/images/tasks2.JPG'),
+                                  ),
+                                  Container(
+                                    width: 45,
+                                    height: 75, // Set the desired height
+                                    decoration: BoxDecoration(
+                                      color: const Color.fromARGB(221, 170, 170, 170),
+                                      borderRadius: BorderRadius.circular(3),
+                                    ),
+                                    child: Image.asset('lib/images/tasks3.JPG'),
+                                  ),
+                                  Container(
+                                    width: 45,
+                                    height: 75, // Set the desired height
+                                    decoration: BoxDecoration(
+                                      color: const Color.fromARGB(221, 170, 170, 170),
+                                      borderRadius: BorderRadius.circular(3),
+                                    ),
+                                    child: Image.asset('lib/images/tasks4.JPG'),
+                                  ),
+                                  Container(
+                                    width: 45,
+                                    height: 75, // Set the desired height
+                                    decoration: BoxDecoration(
+                                      color: const Color.fromARGB(221, 170, 170, 170),
+                                      borderRadius: BorderRadius.circular(3),
+                                    ),
+                                    child: Image.asset('lib/images/tasks5.JPG'),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(height: 16),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Container(
+                                    width: 45,
+                                    height: 75, // Set the desired height
+                                    decoration: BoxDecoration(
+                                      color: const Color.fromARGB(221, 170, 170, 170),
+                                      borderRadius: BorderRadius.circular(3),
+                                    ),
+                                    child: Image.asset('lib/images/tasks5.JPG'),
+                                  ),
+                                  Container(
+                                    width: 45,
+                                    height: 75, // Set the desired height
+                                    decoration: BoxDecoration(
+                                      color: const Color.fromARGB(221, 170, 170, 170),
+                                      borderRadius: BorderRadius.circular(3),
+                                    ),
+                                    child: Image.asset('lib/images/tasks1.JPG'),
+                                  ),
+                                  Container(
+                                    width: 45,
+                                    height: 75, // Set the desired height
+                                    decoration: BoxDecoration(
+                                      color: const Color.fromARGB(221, 170, 170, 170),
+                                      borderRadius: BorderRadius.circular(3),
+                                    ),
+                                    child: Image.asset('lib/images/tasks2.JPG'),
+                                  ),
+                                  Container(
+                                    width: 45,
+                                    height: 75, // Set the desired height
+                                    decoration: BoxDecoration(
+                                      color: const Color.fromARGB(221, 170, 170, 170),
+                                      borderRadius: BorderRadius.circular(3),
+                                    ),
+                                    child: Image.asset('lib/images/tasks3.JPG'),
+                                  ),
+                                  Container(
+                                    width: 45,
+                                    height: 75, // Set the desired height
+                                    decoration: BoxDecoration(
+                                      color: const Color.fromARGB(221, 170, 170, 170),
+                                      borderRadius: BorderRadius.circular(3),
+                                    ),
+                                    child: Image.asset('lib/images/tasks6.JPG'),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          )),
+                      
+                    ],
+                  )),
+                ),
 
                 // Ending Image
+                const SizedBox(height: 108),
+                Image.asset(
+                  'lib/images/GraphicProfile.png',  // Replace with the correct image path
+                  height: 140.7,
+                ),
               ],
             ),
+          ),
           ),
         ),
       ),
