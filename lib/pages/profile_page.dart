@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({Key? key});
@@ -6,15 +7,15 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: DecoratedBox(
+      body: SingleChildScrollView(
+      child: DecoratedBox(
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage("lib/images/BckGrdProfile.png"),
             fit: BoxFit.cover,
           ),
         ),
-        child: SafeArea(
-          child: SingleChildScrollView(
+          child: SafeArea(
           child: Center(
             child: Column(
               children: [
@@ -544,8 +545,8 @@ class ProfilePage extends StatelessWidget {
               ],
             ),
           ),
-          ),
         ),
+      ),
       ),
     );
   }
