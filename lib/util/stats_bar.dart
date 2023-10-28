@@ -28,7 +28,7 @@ class StatsBar extends StatelessWidget {
                         const Row(
                           children: [
                             Text(
-                              'Stats                      ',
+                              'Stats',
                               style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 14,

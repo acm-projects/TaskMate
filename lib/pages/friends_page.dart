@@ -5,15 +5,50 @@ class FriendsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body:DecoratedBox(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
                 image: AssetImage("lib/images/GroupCorner.png"), 
                 fit: BoxFit.cover
           ),
          ),
-         child: Text('Friends Page'),
+        child: Center(
+          child: ListView(
+            children:[
+              Container(
+                width: 336,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        Container(
+                          height: 32,
+                          child: Image.asset('lib/images/profile.png')
+                          ),
+                        Text('Friend1'),
+                      ],
+                    ),
+
+                    Container(
+                      width: 128,
+                      padding: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                        color: Color(0xFF7E80FF),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: const Text('Unfollow'),
+                      
+                    )
+                  ],
+                ),
+        
+              )
+              
+            ],
+          ),
+        ),
       )
     );
   }
