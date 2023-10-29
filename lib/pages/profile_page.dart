@@ -1,28 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:task_mate/util/achievements_bar.dart';
+import 'package:task_mate/util/friends_bar.dart';
+import 'package:task_mate/util/memories.dart';
+import 'package:task_mate/util/stats_bar.dart';
 
 class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
+  const ProfilePage({Key? key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: DecoratedBox(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("lib/images/BckGrdProfile.png"),
-                fit: BoxFit.cover,
-              ),
-            ),
-            child: SafeArea(
-                child: Center(
+      body: DecoratedBox(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("lib/images/BckGrdProfile.png"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: SafeArea(
+          child: SingleChildScrollView(
+            child: Center(
               child: Column(
                 children: [
-                  //Logo Profile Image
+                  // Logo Profile Image
                   Image.asset('lib/images/profile.png'),
 
                   const SizedBox(height: 10),
-
-                  //UserName
+                  // UserName
                   const Text(
                     'UserName',
                     style: TextStyle(
@@ -36,7 +41,7 @@ class ProfilePage extends StatelessWidget {
 
                   SizedBox(height: 10),
 
-                  //Caption
+                  // Caption
                   const Text(
                     'Profile Page',
                     style: TextStyle(
@@ -48,134 +53,36 @@ class ProfilePage extends StatelessWidget {
                     ),
                   ),
 
-                  //Stats Bar
+                  SizedBox(height: 15),
+
+                  // Stats Bar
+                  StatsBar(),
+                  const SizedBox(height: 16),
+
+                  // Friends Bar
+                  FriendsBar(),
+                  const SizedBox(height: 16),
+                  // Achievements Bar
+                  AchieBar(),
+                  const SizedBox(height: 16),
+
+                  // Memories
+                  MemoriesBar(),
+                  const SizedBox(height: 16),
+                  // Ending Image
                   Container(
-                    child: Center(
-                    child: Column(children: [
-                      const Text(
-                        'Stats',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 14,
-                          fontFamily: 'Roboto',
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                      // ---
-                      const SizedBox(height: 10),
-
-                      Text(
-                        'TaskMates',
-                        style: TextStyle(
-                          color: Colors.black.withOpacity(0.5),
-                          fontSize: 12,
-                          fontFamily: 'Roboto',
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                      // ---
-                      const SizedBox(height: 10),
-
-                      Text(
-                        'Tasks Completed     ',
-                        style: TextStyle(
-                          color: Colors.black.withOpacity(0.5),
-                          fontSize: 12,
-                          fontFamily: 'Roboto',
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                      const SizedBox(height: 10),
-
-                      // ---
-                      Text(
-                        'Streaks',
-                        style: TextStyle(
-                          color: Colors.black.withOpacity(0.5),
-                          fontSize: 12,
-                          fontFamily: 'Roboto',
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                      const SizedBox(height: 10),
-
-                      // ---
-                      Text(
-                        'Tasks Completed     ',
-                        style: TextStyle(
-                          color: Colors.black.withOpacity(0.5),
-                          fontSize: 12,
-                          fontFamily: 'Roboto',
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                      const SizedBox(height: 10),
-
-                      // ---
-                      Text(
-                        '50',
-                        textAlign: TextAlign.right,
-                        style: TextStyle(
-                          color: Colors.black.withOpacity(0.5),
-                          fontSize: 12,
-                          fontFamily: 'Roboto',
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                      const SizedBox(height: 10),
-                      // ---
-                      Text(
-                        '20',
-                        textAlign: TextAlign.right,
-                        style: TextStyle(
-                          color: Colors.black.withOpacity(0.5),
-                          fontSize: 12,
-                          fontFamily: 'Roboto',
-                          fontWeight: FontWeight.w400,
-                          height: 0.11,
-                        ),
-                      ),
-                      const SizedBox(height: 10),
-                      // ---
-                      Text(
-                        '100',
-                        textAlign: TextAlign.right,
-                        style: TextStyle(
-                          color: Colors.black.withOpacity(0.5),
-                          fontSize: 12,
-                          fontFamily: 'Roboto',
-                          fontWeight: FontWeight.w400,
-                          height: 0.11,
-                        ),
-                      ),
-                      const SizedBox(height: 10),
-                      // ---
-                      Text(
-                        '50',
-                        textAlign: TextAlign.right,
-                        style: TextStyle(
-                          color: Colors.black.withOpacity(0.5),
-                          fontSize: 12,
-                          fontFamily: 'Roboto',
-                          fontWeight: FontWeight.w400,
-                          height: 0.11,
-                        ),
-                      )
-                    ]),
-                  ))
-                  //Friends Bar
-
-                  //Daily Goal/Achievements Bar
-
-                  //Achievements Bar
-
-                  //Memories
-
-                  //Ending Image
-
-                  //Nav Bar
+                    margin: EdgeInsets.all(10),
+                    child: Image.asset(
+                      'lib/images/GraphicProfile.png',
+                      height: 140.7,
+                    ),
+                  ),
                 ],
               ),
-            ))));
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }

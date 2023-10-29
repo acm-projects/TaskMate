@@ -65,11 +65,20 @@ flutter:
       - lib/images/BckImg.jpg
       - lib/images/CornerBckImg.jpg
       - lib/images/BckGrdProfile.png
+      - lib/images/BckGrdProfile.png
       - lib/images/GraphicProfile.png
       - lib/images/profile.png
       - lib/images/icon_fav.png
       - lib/images/icon_blink.png
       - lib/images/tickcircle.png
+      - lib/images/badge.png
+      - lib/images/badge2.png
+      - lib/images/tasks1.JPG
+      - lib/images/tasks2.JPG
+      - lib/images/tasks3.JPG
+      - lib/images/tasks4.JPG
+      - lib/images/tasks5.JPG
+      - lib/images/tasks6.JPG
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
