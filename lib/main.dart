@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_mate/pages/tasks.dart';
 import 'pages/intro_page.dart';
 import 'package:task_mate/pages/intro_page.dart';
 import 'package:task_mate/pages/profile_page.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const ProfilePage(),
+      home: const TasksPage(),
       routes: {
         '/intro_page.dart': (context) => IntroPage(),
         '/signin_page.dart': (context) => SignInPage(),
