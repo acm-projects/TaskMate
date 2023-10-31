@@ -10,6 +10,7 @@ import 'pages/signup_page2.dart';
 import 'pages/signup_page3.dart';
 import 'pages/signup_page4.dart';
 import 'pages/home.dart';
+import 'pages/create_task.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: TasksPage(),
+      home: CreateTaskPage(),
       routes: {
         '/intro_page.dart': (context) => IntroPage(),
         '/signin_page.dart': (context) => SignInPage(),
