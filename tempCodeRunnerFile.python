@@ -1,0 +1,3 @@
+x = "subash"
+
+print(x)

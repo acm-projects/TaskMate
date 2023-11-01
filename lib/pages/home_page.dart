@@ -1,3 +1,4 @@
+import 'package:file_picker/file_picker.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:task_mate/auth.dart';
@@ -113,6 +114,21 @@ class HomePage extends StatelessWidget{
     child: const Text('Add Friend'),
     );
   }
+ 
+  Widget _fileButton(){
+    return ElevatedButton(
+    onPressed: () async{
+      final results = await FilePicker.platform.pickFiles(
+        allowMultiple: false,
+        type: FileType.custom,
+        allowedExtensions: ['png', 'jpg'],
+      );
+    } ,
+    child: const Text('upload image'),
+    );
+  }
+
+
   Widget _signOutButton(){
     return ElevatedButton(
     onPressed: signOut ,
@@ -141,6 +157,7 @@ class HomePage extends StatelessWidget{
           _createTaskButton(),
           _friendNameField(),
           _addFriendButton(),
+          _fileButton(),
           _signOutButton(),
         ],
       ),
