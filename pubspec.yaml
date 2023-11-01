@@ -81,6 +81,8 @@ flutter:
       - lib/images/tasks5.JPG
       - lib/images/tasks6.JPG
       - lib/images/createtaskpic.png
+      - lib/images/whitebg+gradient.png
+      - lib/images/collabpic.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

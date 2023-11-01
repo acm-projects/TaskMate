@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:task_mate/components/mybuttonrectangular.dart';
-//import 'package:task_mate/components/task.dart';
 import 'package:task_mate/components/textfield2.dart';
 import 'package:task_mate/components/choicebox.dart';
 
@@ -49,52 +48,59 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        //toolbarHeight: 230.0,
-        clipBehavior: Clip.antiAlias,
-        flexibleSpace: Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("lib/images/BckGrdProfile.png"),
-              fit: BoxFit.cover,
-              alignment: Alignment.topCenter,
-            ),
+      
+      body: DecoratedBox(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("lib/images/whitebg+gradient.png"),
+            fit: BoxFit.cover,
           ),
         ),
-        backgroundColor: Colors.transparent,
-        title: const Text(
-          'Create New Task',
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 30,
-            fontFamily: 'Jockey One',
-            fontWeight: FontWeight.w400,
-            height: 0,
-          ),
-        ),
-        leading: IconButton(
-            icon: CircleAvatar(
-              backgroundImage: AssetImage('lib/images/profile.png'),
-              radius: 25,
-              backgroundColor: Colors.grey,
-            ),
-            onPressed: () {
-              //add functionality
-            }),
-        centerTitle: true,
-        elevation: 0,
-      ),
-      body: SafeArea(
+      child: SafeArea(
         child: Center(
           child: Stack(
             children: [
               ListView(
                 padding: EdgeInsets.only(right: 25, left: 25),
                 children: [
-                  const SizedBox(
-                    height: 15,
-                  ),
+                  
+                  Row(
+                      children: [
+                      IconButton(
+                          padding: EdgeInsets.all(0),
+                          icon: CircleAvatar(
+                            backgroundImage:
+                                AssetImage('lib/images/profile.png'),
+                            backgroundColor: Colors.grey,
+                          ),
+                          iconSize: 45,
+                          onPressed: () {
+                            //add functionality
+                          }),
+                    ]),
+                    const SizedBox(height: 5),
+                    Row(
+                      children: [
+                        Text(
+                          'Create New Task',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 20,
+                            fontFamily: 'Jockey One',
+                            fontWeight: FontWeight.w400,
+                            height: 0,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Container(
+                      height: 1.5,
+                      color: Color(0xFFBFBFFF),
+                    ),
+
+                  const SizedBox(height: 15,),
+                  
                   Container(
                     width: 327,
                     padding: EdgeInsets.only(
@@ -346,7 +352,7 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
 
                   const SizedBox(height: 40),
 
-                  Container(
+                  SizedBox(
                     width: 223,
                     height: 180,
                     child: DecoratedBox(
@@ -362,6 +368,7 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
             ],
           ),
         ),
+      ),
       ),
     );
   }

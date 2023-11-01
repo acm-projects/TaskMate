@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_mate/components/task.dart';
+import 'package:task_mate/pages/create_task.dart';
 
 class TasksPage extends StatelessWidget {
   const TasksPage({super.key});
@@ -8,55 +9,55 @@ class TasksPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.white,
-        
-                
-        appBar: AppBar(
-          //toolbarHeight: 230.0,
-          clipBehavior: Clip.antiAlias,
-          flexibleSpace: Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("lib/images/BckGrdProfile.png"), 
-                fit: BoxFit.cover,
-                alignment: Alignment.topCenter,
-              ),
-            ),
-          ),     
-          backgroundColor: Colors.transparent,
-          title: const Text(
-            'My Tasks',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 30,
-              fontFamily: 'Jockey One',
-              fontWeight: FontWeight.w400,
-              height: 0,
-            ),
+        body: DecoratedBox(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("lib/images/whitebg+gradient.png"),
+            fit: BoxFit.cover,
           ),
-          leading: IconButton(
-              icon: CircleAvatar(
-                backgroundImage: AssetImage('lib/images/profile.png'),
-                radius: 25,
-                backgroundColor: Colors.grey, 
-              ),
-              onPressed: () {
-                //add functionality
-              }
-          ),
-          centerTitle: true,
-          elevation: 0,
-          
         ),
-
-        body: SafeArea(
+        child: SafeArea(
               child: Center(
                 child: Stack(
                   children: [
                     ListView(
                       padding: EdgeInsets.only(right: 25, left: 25),
                       children: [
-                        
+                        Row(
+                          children: [
+                          IconButton(
+                              padding: EdgeInsets.all(0),
+                              icon: CircleAvatar(
+                                backgroundImage:
+                                    AssetImage('lib/images/profile.png'),
+                                backgroundColor: Colors.grey,
+                              ),
+                              iconSize: 45,
+                              onPressed: () {
+                                //add functionality
+                              }),
+                        ]),
+                        const SizedBox(height: 5),
+                        Row(
+                          children: [
+                            Text(
+                              'My Tasks',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 25,
+                                fontFamily: 'Jockey One',
+                                fontWeight: FontWeight.w400,
+                                height: 0,
+                              ),
+                            ),
+                          ],
+                        ),
+                    Container(
+                      height: 1.5,
+                      color: Color(0xFFBFBFFF),
+                    ),
+
                         const SizedBox(height: 15,),
 
                         Container(
@@ -278,12 +279,15 @@ class TasksPage extends StatelessWidget {
             Align(
               alignment: Alignment.bottomCenter,
               child: Padding(
-              padding: EdgeInsets.all(16),
+              padding: EdgeInsets.all(25),
               child: FloatingActionButton.extended(
-                      onPressed: () {
-                        // Add the action you want when the button is pressed
-                        // For example, navigate to a new screen, perform an action, etc.
+                      onPressed: (){
+                        Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => CreateTaskPage()),
+                        );
                       },
+                      extendedPadding: EdgeInsets.symmetric(horizontal: 100),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                         ),
@@ -306,7 +310,7 @@ class TasksPage extends StatelessWidget {
            ),
            
           ),
-          floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked, // Position the button as needed
+        ),
         );
   }
 }
