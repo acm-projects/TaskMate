@@ -83,6 +83,8 @@ flutter:
       - lib/images/createtaskpic.png
       - lib/images/whitebg+gradient.png
       - lib/images/collabpic.png
+      - lib/images/streakFire.png
+      - lib/images/topBackground.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
