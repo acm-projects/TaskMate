@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: FriendsPage(),
+      home: ProfilePage(),
       routes: {
         '/intro_page.dart': (context) => IntroPage(),
         '/signin_page.dart': (context) => SignInPage(),
