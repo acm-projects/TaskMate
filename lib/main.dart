@@ -13,6 +13,7 @@ import 'pages/signup_page4.dart';
 import 'pages/home.dart';
 import 'pages/create_task.dart';
 import 'pages/collaborate.dart';
+import 'pages/homepage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: CollaboratePage(), 
+      home: HomePage(),
       routes: {
         '/intro_page.dart': (context) => IntroPage(),
         '/signin_page.dart': (context) => SignInPage(),
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
         '/tasks.dart': (context) => TasksPage(),
         'create_task.dart': (context) => CreateTaskPage(),
         'collaborate.dart': (context) => CollaboratePage(),
+        '/homepage.dart': (context) => HomePage(),
       },
     );
   }
