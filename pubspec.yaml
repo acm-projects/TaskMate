@@ -87,6 +87,13 @@ flutter:
       - lib/images/streakFire.png
       - lib/images/topBackground.png
       - lib/images/ridwan_profile.jpg
+      - lib/images/attachmentsicon.png
+      - lib/images/contributoricon.png
+      - lib/images/messagesicon.png
+      - lib/images/backarrow.png
+      - lib/images/code.png
+      - lib/images/link.png
+      - lib/images/doc.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

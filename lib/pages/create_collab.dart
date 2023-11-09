@@ -39,19 +39,12 @@ class _CreateCollabPageState extends State<CreateCollabPage> {
                   children: [
                     Row(
                       children: [
-                      IconButton(
-                          padding: EdgeInsets.all(0),
-                          icon: CircleAvatar(
-                            backgroundImage:
-                                AssetImage('lib/images/profile.png'),
-                            backgroundColor: Colors.grey,
-                          ),
-                          iconSize: 45,
-                          onPressed: () {
-                            //add functionality
-                          }),
+                      Image.asset(
+                        'lib/images/backarrow.png',
+                        height: 24,
+                        width: 24,
+                      ),
                     ]),
-                    const SizedBox(height: 5),
                     Row(
                       children: [
                         Text(
@@ -201,7 +194,7 @@ class _CreateCollabPageState extends State<CreateCollabPage> {
                     ),
                     const SizedBox(height: 25),
                     MyButton2(
-                      //onTap..
+                      //onTap: 
                       text: 'Done',
                     ),
 
