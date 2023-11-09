@@ -5,6 +5,7 @@ import 'package:task_mate/pages/profile_page.dart';
 import 'package:task_mate/pages/tasks.dart';
 import 'package:task_mate/util/home_page_complete_component.dart';
 
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -16,7 +17,7 @@ class _HomePage extends State<HomePage> {
   int _selectedIndex = 0;
 
   final List<Widget> _pages = [
-    HomePagePageComponent(),
+    const HomePagePageComponent(),
     ProfilePage(),
     TasksPage(),
     CollaboratePage(),
