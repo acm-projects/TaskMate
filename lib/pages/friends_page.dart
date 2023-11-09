@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_mate/pages/profile_page.dart';
 import 'package:task_mate/util/friends_card.dart';
 import 'package:task_mate/util/friends_tile.dart';
 
@@ -30,7 +31,10 @@ class FriendsPage extends StatelessWidget {
                       ),
                       iconSize: 45,
                       onPressed: () {
-                        //add functionality
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => ProfilePage()),
+                        );
                       }),
                 ]),
 
