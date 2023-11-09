@@ -20,6 +20,7 @@ import 'pages/collaboration.dart';
 import 'pages/collab_contributors.dart';
 import 'pages/collab_attachments.dart';
 import 'pages/homepage.dart';
+import 'pages/homepageubaid.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: CollaborationPage(), 
+      home: HomePage(), 
       routes: {
         '/intro_page.dart': (context) => IntroPage(),
         '/signin_page.dart': (context) => SignInPage(),
@@ -44,7 +45,7 @@ class MyApp extends StatelessWidget {
         '/create_task.dart': (context) => CreateTaskPage(),
         '/collaborate.dart': (context) => CollaboratePage(),
         '/create_collab.dart': (context) => CreateCollabPage(),
-        '/homepage.dart': (context) => HomePage(),
+        //'/homepage.dart': (context) => HomePage(),
       },
     );
   }
