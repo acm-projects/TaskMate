@@ -95,6 +95,8 @@ flutter:
       - lib/images/link.png
       - lib/images/doc.png
       - lib/images/profilebig.png
+      - lib/images/plus.png
+      - lib/images/streakboxtemp.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
