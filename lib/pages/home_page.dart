@@ -3,6 +3,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:task_mate/auth.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:task_mate/storage_service.dart';
+import '../main.dart';
 
 class HomePage extends StatelessWidget{
   HomePage({Key? key}) : super(key: key);
@@ -114,19 +116,38 @@ class HomePage extends StatelessWidget{
     child: const Text('Add Friend'),
     );
   }
- 
-  Widget _fileButton(){
-    return ElevatedButton(
-    onPressed: () async{
+final Storage storage = Storage();
+Widget _fileButton(BuildContext context) {
+  return ElevatedButton(
+    onPressed: () async {
       final results = await FilePicker.platform.pickFiles(
         allowMultiple: false,
         type: FileType.custom,
         allowedExtensions: ['png', 'jpg'],
       );
-    } ,
-    child: const Text('upload image'),
-    );
-  }
+
+      if (results == null) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('No file selected.'),
+          ),
+        );
+        return;
+      }
+      
+      final path = results.files.single.path!;
+      final fileName = results.files.single.name;
+
+      print(path);
+      print(fileName);
+      
+      storage.uploadFile(path, fileName); 
+    },
+    child: const Text('Upload Image'),
+  );
+}
+
+
 
 
   Widget _signOutButton(){
@@ -157,7 +178,7 @@ class HomePage extends StatelessWidget{
           _createTaskButton(),
           _friendNameField(),
           _addFriendButton(),
-          _fileButton(),
+          _fileButton(context),
           _signOutButton(),
         ],
       ),
