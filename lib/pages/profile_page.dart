@@ -1,86 +1,60 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:task_mate/util/achievements_bar.dart';
-import 'package:task_mate/util/friends_bar.dart';
-import 'package:task_mate/util/memories.dart';
-import 'package:task_mate/util/stats_bar.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:task_mate/pages/collaborate.dart';
+import 'package:task_mate/pages/homepage.dart';
+import 'package:task_mate/pages/tasks.dart';
 
-class ProfilePage extends StatelessWidget {
-  const ProfilePage({Key? key});
+class ProfilePage extends StatefulWidget {
+  const ProfilePage({Key? key}) : super(key: key);
+
+  @override
+  _ProfilePageState createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
+  int _selectedIndex = 0;
+
+  final List<Widget> _pages = [
+    HomePage(),
+    ProfilePage(),
+    TasksPage(),
+    CollaboratePage(),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: DecoratedBox(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("lib/images/BckGrdProfile.png"),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: SafeArea(
-          child: SingleChildScrollView(
-            child: Center(
-              child: Column(
-                children: [
-                  // Logo Profile Image
-                  Image.asset('lib/images/profile.png'),
-
-                  const SizedBox(height: 10),
-                  // UserName
-                  const Text(
-                    'UserName',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 25,
-                      fontFamily: 'Jockey One',
-                      fontWeight: FontWeight.w400,
-                      height: 0,
-                    ),
-                  ),
-
-                  SizedBox(height: 10),
-
-                  // Caption
-                  const Text(
-                    'Profile Page',
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 61, 61, 61),
-                      fontSize: 15,
-                      fontFamily: 'Roboto',
-                      fontWeight: FontWeight.w400,
-                      height: 0.16,
-                    ),
-                  ),
-
-                  SizedBox(height: 15),
-
-                  // Stats Bar
-                  StatsBar(),
-                  const SizedBox(height: 16),
-
-                  // Friends Bar
-                  FriendsBar(),
-                  const SizedBox(height: 16),
-                  // Achievements Bar
-                  AchieBar(),
-                  const SizedBox(height: 16),
-
-                  // Memories
-                  MemoriesBar(),
-                  const SizedBox(height: 16),
-                  // Ending Image
-                  Container(
-                    margin: EdgeInsets.all(10),
-                    child: Image.asset(
-                      'lib/images/GraphicProfile.png',
-                      height: 140.7,
-                    ),
-                  ),
-                ],
-              ),
+      body: _pages[_selectedIndex],
+      bottomNavigationBar: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+        child: GNav(
+          selectedIndex: _selectedIndex,
+          onTabChange: _onItemTapped,
+          gap: 8,
+          tabs: const [
+            GButton(
+              icon: Icons.home,
+              text: 'Home',
             ),
-          ),
+            GButton(
+              icon: Icons.account_circle,
+              text: 'Profile',
+            ),
+            GButton(
+              icon: Icons.add,
+              text: 'My Tasks',
+            ),
+            GButton(
+              icon: Icons.add_comment_rounded,
+              text: 'Collaborate',
+            ),
+          ],
         ),
       ),
     );
