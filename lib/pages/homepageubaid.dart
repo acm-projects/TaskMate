@@ -34,7 +34,7 @@ class _HomePage extends State<HomePage> {
     return Scaffold(
       body: _pages[_selectedIndex],
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 18),
         child: GNav(
           selectedIndex: _selectedIndex,
           onTabChange: _onItemTapped,
@@ -54,8 +54,12 @@ class _HomePage extends State<HomePage> {
               icon: Icons.add_task_outlined,
               text: 'My Tasks',
             ),
+            // GButton(
+            //   icon: Icons.add_comment_rounded,
+            //   text: 'Collaborate',
+            // ),
             GButton(
-              icon: Icons.add_comment_rounded,
+              icon: Icons.textsms_sharp,
               text: 'Collaborate',
             ),
           ],
