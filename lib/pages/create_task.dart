@@ -23,7 +23,7 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
   void _showDatePicker() {
     showDatePicker(
       context: context,
-      initialDate: DateTime.now(),
+      initialDate: _dateTime,
       firstDate: DateTime(1950),
       lastDate: DateTime(2050),
     ).then((value) => {
@@ -34,7 +34,7 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
   }
 
   void _showTimePicker() {
-    showTimePicker(context: context, initialTime: TimeOfDay.now())
+    showTimePicker(context: context, initialTime: _timeOfDay)
         .then((value) => {
               setState(() {
                 _timeOfDay = value!;
@@ -237,9 +237,9 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
                                       ),
                                     ),
                                     child: Text(
-                                        _timeOfDay.hour.toString() +
+                                        _timeOfDay.hour.toString().padLeft(2, '0') +
                                             ':' +
-                                            _timeOfDay.minute.toString(),
+                                            _timeOfDay.minute.toString().padLeft(2, '0'),
                                         style: TextStyle(
                                           color: Colors.black,
                                           fontSize: 14,

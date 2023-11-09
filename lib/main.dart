@@ -19,6 +19,7 @@ import 'components/navbar.dart';
 import 'pages/collaboration.dart';
 import 'pages/collab_contributors.dart';
 import 'pages/collab_attachments.dart';
+import 'pages/homepage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
         '/create_task.dart': (context) => CreateTaskPage(),
         '/collaborate.dart': (context) => CollaboratePage(),
         '/create_collab.dart': (context) => CreateCollabPage(),
+        '/homepage.dart': (context) => HomePage(),
       },
     );
   }
