@@ -17,6 +17,9 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
   TimeOfDay _timeOfDay = TimeOfDay.now();
   int selectedChoice = 1;
 
+  void _CreateNewTask() {
+
+  }
   void _showDatePicker() {
     showDatePicker(
       context: context,
@@ -346,7 +349,7 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
                   const SizedBox(height: 25),
 
                   MyButton2(
-                    //onTap..
+                    //onTap: _CreateNewTask(),
                     text: 'Done',
                   ),
 
