@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:task_mate/pages/collaborate.dart';
-import 'package:task_mate/pages/homepage.dart';
+import 'package:task_mate/pages/homepageupdated.dart';
 import 'package:task_mate/pages/tasks.dart';
 
 class ProfilePage extends StatefulWidget {
