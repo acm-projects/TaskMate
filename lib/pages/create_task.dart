@@ -62,7 +62,9 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
                 ListView(
                   padding: EdgeInsets.only(right: 25, left: 25),
                   children: [
-                    Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start, 
+                      children: [
                       IconButton(
                           icon: Image(
                             image: AssetImage(

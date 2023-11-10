@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:camera/camera.dart';
 import 'package:task_mate/pages/collaborate.dart';
 import 'package:task_mate/pages/create_collab.dart';
 import 'package:task_mate/pages/tasks.dart';
 import 'package:task_mate/pages/friends_page.dart';
+import 'package:task_mate/pages/testcamera2.dart';
 import 'pages/intro_page.dart';
 import 'package:task_mate/pages/intro_page.dart';
 import 'package:task_mate/pages/profile_page.dart';
@@ -19,10 +21,13 @@ import 'components/navbar.dart';
 import 'pages/collaboration.dart';
 import 'pages/collab_contributors.dart';
 import 'pages/collab_attachments.dart';
-import 'pages/homepage.dart';
-import 'pages/homepageupdated.dart';
+import 'pages/homepageubaid.dart';
 
+//late List<CameraDescription> cameras;
 void main() {
+  // WidgetsFlutterBinding.ensureInitialized();
+  // cameras = await availableCameras();
+  // final firstCamera = cameras.first;
   runApp(const MyApp());
 }
 
@@ -33,7 +38,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(), 
+      home: IntroPage(),
       routes: {
         '/intro_page.dart': (context) => IntroPage(),
         '/signin_page.dart': (context) => SignInPage(),
@@ -45,7 +50,7 @@ class MyApp extends StatelessWidget {
         '/create_task.dart': (context) => CreateTaskPage(),
         '/collaborate.dart': (context) => CollaboratePage(),
         '/create_collab.dart': (context) => CreateCollabPage(),
-        '/homepageupdated.dart': (context) => HomePage(),
+        '/homepageubaid.dart': (context) => HomePage(),
       },
     );
   }

@@ -1,12 +1,9 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
-import 'package:task_mate/components/collabtile.dart';
 import 'package:task_mate/components/mybuttonrectangular.dart';
-import 'package:task_mate/pages/create_collab.dart';
+import 'package:task_mate/components/post.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class HomePagePageComponent extends StatelessWidget {
+  const HomePagePageComponent({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -253,11 +250,19 @@ class HomePage extends StatelessWidget {
                                       decoration: ShapeDecoration(
                                           color: Colors.white,
                                           shape: RoundedRectangleBorder(
-                                              side: BorderSide(width: 1, color: Color(0xFFBFBFFF)),
                                               borderRadius: BorderRadius.circular(6),
                                           ),
+                                          shadows: const [
+                                            BoxShadow(
+                                              color: Color(0x3F000000),
+                                              blurRadius: 4,
+                                              offset: Offset(0, 4),
+                                              spreadRadius: 0,
+                                            )
+                                          ],
                                       ),
                                       child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.center,
                                           children: [
                                             Row(
                                               children: [
@@ -299,9 +304,17 @@ class HomePage extends StatelessWidget {
                                       height: 69,
                                       width: 155,
                                       decoration: BoxDecoration(
+                                        
                                         image: DecorationImage(
                                           image: AssetImage('lib/images/streakboxtemp.png'),
-                                        )
+                                        ),
+                                        boxShadow: [ BoxShadow(
+                                            color: Color(0x1F000000),
+                                            blurRadius: 4,
+                                            offset: Offset(0, 4),
+                                            spreadRadius: 0,
+                                          ),
+                                        ]
                                         ),
                                     )
                                   ],
@@ -314,21 +327,28 @@ class HomePage extends StatelessWidget {
                         ),
 
                         const SizedBox(height: 20,),
-
+                        
+                        //make elevated button
                         MyButton2(
                           text: '+ Create a New Post'
                         ),
 
-                        
+                        const SizedBox(height: 12,),
 
+                        Post(pfp: 'lib/images/profilebig.png', userName: 'Zubiya', timeSincePost: '3 hours ago', smallPicture: 'lib/images/tasks1.JPG', bigPicture: 'lib/images/tasks2.JPG', progress: 100, caption: 'fridays at cuppa!'),
+
+                        const SizedBox(height: 25),
+
+                        Post(pfp: 'lib/images/profilebig.png', userName: 'Zubiya', timeSincePost: '16 hours ago', smallPicture: 'lib/images/tasks6.JPG', bigPicture: 'lib/images/tasks4.JPG', progress: 70, caption: 'halfway done with my assignment'),
+
+                        const SizedBox(height: 25,),
                   ],
                 ),
               ],
             ),
           ),
-          
-        ),
-      ),
+        ), 
+      ), 
     );
   }
 }

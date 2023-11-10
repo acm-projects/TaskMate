@@ -10,10 +10,11 @@ class IntroPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body:DecoratedBox(
         decoration: BoxDecoration(
           image: DecorationImage(
-                image: AssetImage("lib/images/GroupCorner.png"), 
+                image: AssetImage("lib/images/Intro.png"), 
                 fit: BoxFit.cover
           ),
          ),
