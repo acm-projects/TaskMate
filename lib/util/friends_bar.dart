@@ -78,25 +78,25 @@ class FriendsBar extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
-                  height: 39,
-                  child: Image.asset('lib/images/profile.png'),
+                CircleAvatar(
+                    radius: 25,
+                    backgroundImage: AssetImage('lib/images/profile_pic_2.jpeg'),
+                  ),
+                CircleAvatar(
+                  radius: 25,
+                  backgroundImage: AssetImage('lib/images/ridwan_profile.jpg'),
                 ),
-                Container(
-                  height: 39,
-                  child: Image.asset('lib/images/profile.png'),
+                CircleAvatar(
+                  radius: 25,
+                  backgroundImage: AssetImage('lib/images/profile_pic_3.jpeg'),
                 ),
-                Container(
-                  height: 39,
-                  child: Image.asset('lib/images/profile.png'),
+                CircleAvatar(
+                  radius: 25,
+                  backgroundImage: AssetImage('lib/images/profile_pic_2.jpeg'),
                 ),
-                Container(
-                  height: 39,
-                  child: Image.asset('lib/images/profile.png'),
-                ),
-                Container(
-                  height: 39,
-                  child: Image.asset('lib/images/profile.png'),
+                CircleAvatar(
+                  radius: 25,
+                  backgroundImage: AssetImage('lib/images/profile_pic_2.jpeg'),
                 ),
               ],
             ),

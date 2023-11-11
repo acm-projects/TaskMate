@@ -35,14 +35,17 @@ class _CreateCollabPageState extends State<CreateCollabPage> {
             child: Stack(
               children: [
                 ListView(
-                  padding: EdgeInsets.only(right: 25, left: 25),
+                  padding: EdgeInsets.only(right: 25, left: 24),
                   children: [
                     Row(
                       children: [
-                      Image.asset(
-                        'lib/images/backarrow.png',
-                        height: 24,
-                        width: 24,
+                      IconButton(
+                        padding: const EdgeInsets.only(left: 0),
+                        icon: const Icon(Icons.arrow_back_ios_new,
+                            size: 25), // Use the Icon widget
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
                       ),
                     ]),
                     Row(

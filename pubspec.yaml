@@ -104,6 +104,10 @@ flutter:
       - lib/images/streakboxtemp.png
       - lib/images/bell.png
       - lib/images/celebrate.png
+      - lib/images/zubi_profile.jpg
+      - lib/images/profile_pic_2.jpeg
+      - lib/images/profile_pic_3.jpeg
+      - 
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

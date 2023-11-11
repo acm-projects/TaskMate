@@ -30,7 +30,7 @@ class HomePagePageComponent extends StatelessWidget {
                           IconButton(
                             iconSize: 69,
                               padding: EdgeInsets.all(0),
-                              icon: Image(
+                              icon: const Image(
                                 image: AssetImage(
                                   'lib/images/profilebig.png'
                                   ),
@@ -41,7 +41,7 @@ class HomePagePageComponent extends StatelessWidget {
 
                           const SizedBox(width: 15,),
 
-                          Column(
+                          const Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -77,7 +77,7 @@ class HomePagePageComponent extends StatelessWidget {
                                 ],
                               ),
 
-                              const SizedBox(height: 1.5),
+                              SizedBox(height: 1.5),
 
                               Row(
                                 children: [
@@ -261,7 +261,7 @@ class HomePagePageComponent extends StatelessWidget {
                                             )
                                           ],
                                       ),
-                                      child: Column(
+                                      child: const Column(
                                         mainAxisAlignment: MainAxisAlignment.center,
                                           children: [
                                             Row(

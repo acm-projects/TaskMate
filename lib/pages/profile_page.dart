@@ -23,12 +23,17 @@ class ProfilePage extends StatelessWidget {
               child: Column(
                 children: [
                   // Logo Profile Image
-                  Image.asset('lib/images/profile.png'),
+                  CircleAvatar(
+                    radius: 35,
+                    backgroundImage: AssetImage('lib/images/zubi_profile.jpg'),
+                  ),
+
+                  
 
                   const SizedBox(height: 10),
                   // UserName
                   const Text(
-                    'UserName',
+                    'Zubi.ya',
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 25,

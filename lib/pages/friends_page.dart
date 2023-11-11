@@ -16,26 +16,27 @@ class FriendsPage extends StatelessWidget {
             fit: BoxFit.cover),
       ),
       child: SafeArea(
-          child: Center(
+        child: Center(
         child: Stack(
           children: [
+            SizedBox(height: 50),
             ListView(
               padding: EdgeInsets.only(right: 25, left: 25),
               children: [
-                Row(children: [
-                  IconButton(
-                    padding: EdgeInsets.all(0),
-                    icon: Icon(Icons.arrow_back_ios_new,
-                        size: 45), // Use the Icon widget
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                  ),
-                ]),
-
-                const SizedBox(height: 5),
-
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    IconButton(
+                        icon: const Icon(Icons.arrow_back_ios_new,
+                            size: 25), // Use the Icon widget
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                      ),
+                  ],
+                ),
+                const SizedBox(height: 5),
+                const Row(
                   children: [
                     Text(
                       'Friends',
@@ -56,7 +57,7 @@ class FriendsPage extends StatelessWidget {
                   color: Color(0xFFBFBFFF),
                 ),
 
-                Padding(
+                const Padding(
                   padding: EdgeInsets.only(top: 8, bottom: 8),
                   child: Text(
                     'Make a New Friend Today!',
@@ -79,11 +80,11 @@ class FriendsPage extends StatelessWidget {
                     children: [
                       // ignore: prefer_const_constructors
                       CardFriend(
-                        username: 'ProductiveUser123',
+                        username: 'Ridwan',
                         profilePic: "lib/images/ridwan_profile.jpg",
                       ),
                       const CardFriend(
-                        username: 'Friend2',
+                        username: 'Jasper',
                         profilePic: "lib/images/profile.png",
                       ),
                       const CardFriend(
@@ -116,18 +117,18 @@ class FriendsPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 1),
                 //list of friends to add
-                FriendsTile(username: 'Friend1'),
-                FriendsTile(username: "Friend2"),
-                FriendsTile(username: 'Friend1'),
-                FriendsTile(username: "Friend2"),
-                FriendsTile(username: 'Friend1'),
-                FriendsTile(username: "Friend2"),
-                FriendsTile(username: 'Friend1'),
-                FriendsTile(username: "Friend2"),
-                FriendsTile(username: 'Friend1'),
-                FriendsTile(username: "Friend2"),
-                FriendsTile(username: 'Friend1'),
-                FriendsTile(username: "Friend2"),
+                FriendsTile(username: 'Shrimoy'),
+                FriendsTile(username: "Ubaid"),
+                FriendsTile(username: 'Zubiya'),
+                FriendsTile(username: "Jasper"),
+                FriendsTile(username: 'Ridwan'),
+                FriendsTile(username: "Sarah"),
+                FriendsTile(username: 'Sofia'),
+                FriendsTile(username: "Zunairah"),
+                FriendsTile(username: 'Ethan'),
+                FriendsTile(username: "Safia"),
+                FriendsTile(username: 'Zainab'),
+                FriendsTile(username: "Muriam"),
               ],
             )
           ],

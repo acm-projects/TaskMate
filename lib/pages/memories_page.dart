@@ -50,7 +50,7 @@ class Memories extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Column(
+                    const Column(
                       children: [
                         Row(
                           children: [
@@ -71,11 +71,12 @@ class Memories extends StatelessWidget {
                         ),
                         SizedBox(height: 25),
                         Post(pfp: 'lib/images/profilebig.png', userName: 'Zubiya', timeSincePost: '3 hours ago', smallPicture: 'lib/images/tasks1.JPG', bigPicture: 'lib/images/tasks2.JPG', progress: 100, caption: 'fridays at cuppa!'),
-
                         SizedBox(height: 25),
-
+                        Post(pfp: 'lib/images/profilebig.png', userName: 'Zubiya', timeSincePost: '1 week ago', smallPicture: 'lib/images/tasks4.JPG', bigPicture: 'lib/images/tasks5.JPG', progress: 100, caption: 'completed my fishing assignment!'),
+                        SizedBox(height: 25),
                         Post(pfp: 'lib/images/profilebig.png', userName: 'Zubiya', timeSincePost: '16 hours ago', smallPicture: 'lib/images/tasks6.JPG', bigPicture: 'lib/images/tasks4.JPG', progress: 70, caption: 'halfway done with my assignment'),
-
+                        SizedBox(height: 25),
+                        Post(pfp: 'lib/images/profilebig.png', userName: 'Zubiya', timeSincePost: '4 weeks ago', smallPicture: 'lib/images/tasks3.JPG', bigPicture: 'lib/images/tasks1.JPG', progress: 30, caption: 'discrete mathhhhhhh and took got my steps in'),
                         SizedBox(height: 25,),
                       ],
                     )
