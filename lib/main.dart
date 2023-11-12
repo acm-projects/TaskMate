@@ -22,6 +22,7 @@ import 'pages/collaboration.dart';
 import 'pages/collab_contributors.dart';
 import 'pages/collab_attachments.dart';
 import 'pages/homepageubaid.dart';
+import 'pages/post_task.dart';
 
 //late List<CameraDescription> cameras;
 void main() {
@@ -38,7 +39,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: IntroPage(),
+      home: HomePage(),
       routes: {
         '/intro_page.dart': (context) => IntroPage(),
         '/signin_page.dart': (context) => SignInPage(),

@@ -39,13 +39,23 @@ class _CreateCollabPageState extends State<CreateCollabPage> {
                   children: [
                     Row(
                       children: [
-                      Image.asset(
-                        'lib/images/backarrow.png',
-                        height: 24,
-                        width: 24,
-                      ),
+                      IconButton(
+                          icon: Image(
+                            image: AssetImage(
+                              'lib/images/backarrow.png',
+                            ),
+                            width: 24,
+                            height: 24,
+                          ),
+
+                          //iconSize: 24,
+                          onPressed: () {
+                            //add functionality
+                            Navigator.pop(context);
+                          }),
                     ]),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
                           'Create New Collaboration',

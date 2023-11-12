@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:task_mate/components/collabtile.dart';
+import 'package:task_mate/pages/collaboration.dart';
 import 'package:task_mate/pages/create_collab.dart';
 
 class CollaboratePage extends StatelessWidget {
@@ -84,25 +85,33 @@ class CollaboratePage extends StatelessWidget {
                       child: Center(
                           child: Column(
                         children: [
-                          CollabTile(collabName: 'Our CS Project'),
+                          CollabTile(collabName: 'Our CS Project', onTap: () {
+                            Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => CollaborationPage()),
+                            );
+                          }),
                           Divider(
                             height: 1,
                             color: Colors.grey.shade200,
                             thickness: 1.5,
                           ),
-                          CollabTile(collabName: 'Our Family Chores'),
+                          CollabTile(collabName: 'Our Family Chores', onTap: () {},),
                           Divider(
                             height: 1,
                             color: Colors.grey.shade200,
                             thickness: 1.5,
                           ),
-                          CollabTile(collabName: 'Our Gym Group'),
+                          CollabTile(collabName: 'Our Gym Group', onTap: () {
+                            
+                          },),
                           Divider(
                             height: 1,
                             color: Colors.grey.shade200,
                             thickness: 1.5,
                           ),
-                          CollabTile(collabName: 'Our Collaboration'),
+                          CollabTile(collabName: 'Our Collaboration', onTap: () {}),
                         ],
                       )),
                     ),

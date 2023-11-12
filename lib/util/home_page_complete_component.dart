@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:task_mate/components/mybuttonrectangular.dart';
+import 'package:task_mate/components/mybuttonrectangular2.dart';
+import 'package:task_mate/pages/post_task.dart';
 import 'package:task_mate/components/post.dart';
 
 class HomePagePageComponent extends StatelessWidget {
@@ -329,9 +330,15 @@ class HomePagePageComponent extends StatelessWidget {
                         const SizedBox(height: 20,),
                         
                         //make elevated button
-                        MyButton2(
-                          text: '+ Create a New Post'
-                        ),
+                        MyButton3(
+                          text: '+ Create a New Post', 
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => PostTaskPage()),
+                            );
+                          },
+                          ),
 
                         const SizedBox(height: 12,),
 

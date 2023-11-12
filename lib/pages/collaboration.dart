@@ -49,6 +49,7 @@ class _CollaborationPageState extends State<CollaborationPage>
                           //iconSize: 24,
                           onPressed: () {
                             //add functionality
+                            Navigator.pop(context);
                           }),
                     ]),
                     Row(

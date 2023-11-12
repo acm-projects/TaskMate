@@ -40,6 +40,8 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
   }
 
   //text editing controllers
+  // final User? user = Auth().currentUser;
+  // final DatabaseReference ref = FirebaseDatabase.instance.ref("users/${Auth().currentUser?.uid}");
   final taskNameController = TextEditingController();
   final categoryController = TextEditingController();
   final descriptionController = TextEditingController();
