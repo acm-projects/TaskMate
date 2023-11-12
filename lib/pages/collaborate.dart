@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:task_mate/components/collabtile.dart';
 import 'package:task_mate/pages/collaboration.dart';
 import 'package:task_mate/pages/create_collab.dart';
+import 'package:task_mate/pages/profile_page.dart';
 
 class CollaboratePage extends StatelessWidget {
   const CollaboratePage({super.key});
@@ -40,6 +41,7 @@ class CollaboratePage extends StatelessWidget {
                               iconSize: 45,
                               onPressed: () {
                                 //add functionality
+                                
                               }),
 
                           //couldn't figure how to make title automatically centered so it's hardcoded

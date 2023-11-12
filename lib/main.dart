@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:task_mate/pages/collaborate.dart';
 import 'package:task_mate/pages/create_collab.dart';
+import 'package:task_mate/pages/memories_page.dart';
 import 'package:task_mate/pages/tasks.dart';
 import 'package:task_mate/pages/friends_page.dart';
 import 'package:task_mate/pages/testcamera2.dart';

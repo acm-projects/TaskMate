@@ -40,10 +40,11 @@ class FriendsBar extends StatelessWidget {
                     );
                   },
                   style: TextButton.styleFrom(
-                    padding: EdgeInsets.zero,
+                    backgroundColor: Color.fromARGB(255, 207, 208, 255),
+                    padding: EdgeInsets.all(5),
                     minimumSize: Size(20, 20),
                   ),
-                  child: Text(
+                  child: const Text(
                     'Friends',
                     style: TextStyle(
                       color: Colors.black,
@@ -56,9 +57,9 @@ class FriendsBar extends StatelessWidget {
               ),
             ],
           ),
-          Row(
+          const Row(
             children: [
-              const Text(
+              Text(
                 '10 Friends',
                 style: TextStyle(
                   color: Color(0xFF808080),
@@ -77,25 +78,25 @@ class FriendsBar extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
-                  height: 39,
-                  child: Image.asset('lib/images/profile.png'),
+                CircleAvatar(
+                    radius: 25,
+                    backgroundImage: AssetImage('lib/images/profile_pic_2.jpeg'),
+                  ),
+                CircleAvatar(
+                  radius: 25,
+                  backgroundImage: AssetImage('lib/images/ridwan_profile.jpg'),
                 ),
-                Container(
-                  height: 39,
-                  child: Image.asset('lib/images/profile.png'),
+                CircleAvatar(
+                  radius: 25,
+                  backgroundImage: AssetImage('lib/images/profile_pic_3.jpeg'),
                 ),
-                Container(
-                  height: 39,
-                  child: Image.asset('lib/images/profile.png'),
+                CircleAvatar(
+                  radius: 25,
+                  backgroundImage: AssetImage('lib/images/profile_pic_2.jpeg'),
                 ),
-                Container(
-                  height: 39,
-                  child: Image.asset('lib/images/profile.png'),
-                ),
-                Container(
-                  height: 39,
-                  child: Image.asset('lib/images/profile.png'),
+                CircleAvatar(
+                  radius: 25,
+                  backgroundImage: AssetImage('lib/images/profile_pic_2.jpeg'),
                 ),
               ],
             ),

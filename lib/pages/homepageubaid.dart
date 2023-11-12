@@ -51,7 +51,7 @@ class _HomePage extends State<HomePage> {
               text: 'Profile',
             ),
             GButton(
-              icon: Icons.add_task_outlined,
+              icon: Icons.playlist_add_check_rounded,
               text: 'My Tasks',
             ),
             // GButton(
