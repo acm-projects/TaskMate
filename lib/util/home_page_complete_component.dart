@@ -347,11 +347,11 @@ class HomePagePageComponent extends StatelessWidget {
 
                         const SizedBox(height: 12,),
 
-                        Post(pfp: 'lib/images/profilebig.png', userName: 'Zubiya', timeSincePost: '3 hours ago', smallPicture: 'lib/images/tasks1.JPG', bigPicture: 'lib/images/tasks2.JPG', progress: 100, caption: 'fridays at cuppa!'),
+                        Post(pfp: 'lib/images/zubi_profile.jpg', userName: 'Zubiya', timeSincePost: '3 hours ago', smallPicture: 'lib/images/tasks1.JPG', bigPicture: 'lib/images/tasks2.JPG', progress: 100, caption: 'fridays at cuppa!'),
 
                         const SizedBox(height: 25),
 
-                        Post(pfp: 'lib/images/profilebig.png', userName: 'Zubiya', timeSincePost: '16 hours ago', smallPicture: 'lib/images/tasks6.JPG', bigPicture: 'lib/images/tasks4.JPG', progress: 70, caption: 'halfway done with my assignment'),
+                        Post(pfp: 'lib/images/zubi_profile.jpg', userName: 'Zubiya', timeSincePost: '16 hours ago', smallPicture: 'lib/images/tasks6.JPG', bigPicture: 'lib/images/tasks4.JPG', progress: 70, caption: 'halfway done with my assignment'),
 
                         const SizedBox(height: 25,),
                   ],

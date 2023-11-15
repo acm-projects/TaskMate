@@ -28,7 +28,7 @@ class TasksPage extends StatelessWidget {
                           padding: EdgeInsets.all(0),
                           icon: CircleAvatar(
                             backgroundImage:
-                                AssetImage('lib/images/profile.png'),
+                                AssetImage('lib/images/zubi_profile.jpg'),
                             backgroundColor: Colors.grey,
                           ),
                           iconSize: 45,
