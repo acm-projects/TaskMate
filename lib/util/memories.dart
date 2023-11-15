@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_mate/pages/memories_page.dart';
 
 class MemoriesBar extends StatelessWidget {
   const MemoriesBar({super.key});
@@ -26,17 +27,33 @@ class MemoriesBar extends StatelessWidget {
       child: Center(
           child: Column(
         children: [
-          const Row(
+          Row(
             children: [
               SizedBox(height: 16),
-              Text(
-                'Memories',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 14,
-                  fontFamily: 'Roboto',
-                  fontWeight: FontWeight.w400,
-                  height: 0.10,
+              Container(
+                padding: EdgeInsets.zero, // Set padding to zero
+                margin: EdgeInsets.zero, // Set margin to zero
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Memories()),
+                    );
+                  },
+                  style: TextButton.styleFrom(
+                    backgroundColor: Color.fromARGB(255, 207, 208, 255),
+                    padding: EdgeInsets.all(5),
+                    minimumSize: Size(20, 20),
+                  ),
+                  child: const Text(
+                    'Memories',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 14,
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
                 ),
               ),
             ],

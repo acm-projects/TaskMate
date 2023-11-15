@@ -4,15 +4,18 @@ import "package:flutter/material.dart";
 
 class CollabTile extends StatelessWidget {
   final String collabName;
+  final Function()? onTap;
 
   const CollabTile({
     super.key,
     required this.collabName,
+    required this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: onTap,
       child: Container(
         height: 50,
         child: Padding(
@@ -24,7 +27,11 @@ class CollabTile extends StatelessWidget {
                 Row(
                   //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Image.asset('lib/images/collabpic.png'),
+                    // Image.asset('lib/images/collabpic.png'),
+                    Icon(
+                      Icons.computer_rounded,
+                      size: 25,
+                    ),
 
                     const SizedBox(width: 8,),
 

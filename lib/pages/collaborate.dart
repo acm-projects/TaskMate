@@ -2,7 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:task_mate/components/collabtile.dart';
+import 'package:task_mate/pages/collaboration.dart';
 import 'package:task_mate/pages/create_collab.dart';
+import 'package:task_mate/pages/profile_page.dart';
 
 class CollaboratePage extends StatelessWidget {
   const CollaboratePage({super.key});
@@ -33,12 +35,13 @@ class CollaboratePage extends StatelessWidget {
                               padding: EdgeInsets.all(0),
                               icon: CircleAvatar(
                                 backgroundImage:
-                                  AssetImage('lib/images/profile.png'),
+                                  AssetImage('lib/images/zubi_profile.jpg'),
                                   backgroundColor: Colors.grey,
                               ),
                               iconSize: 45,
                               onPressed: () {
                                 //add functionality
+                                
                               }),
 
                           //couldn't figure how to make title automatically centered so it's hardcoded
@@ -84,25 +87,33 @@ class CollaboratePage extends StatelessWidget {
                       child: Center(
                           child: Column(
                         children: [
-                          CollabTile(collabName: 'Our CS Project'),
+                          CollabTile(collabName: 'Our CS Project', onTap: () {
+                            Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => CollaborationPage()),
+                            );
+                          }),
                           Divider(
                             height: 1,
                             color: Colors.grey.shade200,
                             thickness: 1.5,
                           ),
-                          CollabTile(collabName: 'Our Family Chores'),
+                          CollabTile(collabName: 'Our Family Chores', onTap: () {},),
                           Divider(
                             height: 1,
                             color: Colors.grey.shade200,
                             thickness: 1.5,
                           ),
-                          CollabTile(collabName: 'Our Gym Group'),
+                          CollabTile(collabName: 'Our Gym Group', onTap: () {
+                            
+                          },),
                           Divider(
                             height: 1,
                             color: Colors.grey.shade200,
                             thickness: 1.5,
                           ),
-                          CollabTile(collabName: 'Our Collaboration'),
+                          CollabTile(collabName: 'Our Collaboration', onTap: () {}),
                         ],
                       )),
                     ),

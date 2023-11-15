@@ -35,24 +35,21 @@ class _CreateCollabPageState extends State<CreateCollabPage> {
             child: Stack(
               children: [
                 ListView(
-                  padding: EdgeInsets.only(right: 25, left: 25),
+                  padding: EdgeInsets.only(right: 25, left: 24),
                   children: [
                     Row(
                       children: [
                       IconButton(
-                          padding: EdgeInsets.all(0),
-                          icon: CircleAvatar(
-                            backgroundImage:
-                                AssetImage('lib/images/profile.png'),
-                            backgroundColor: Colors.grey,
-                          ),
-                          iconSize: 45,
-                          onPressed: () {
-                            //add functionality
-                          }),
+                        padding: const EdgeInsets.only(left: 0),
+                        icon: const Icon(Icons.arrow_back_ios_new,
+                            size: 25), // Use the Icon widget
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                      ),
                     ]),
-                    const SizedBox(height: 5),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
                           'Create New Collaboration',
@@ -201,7 +198,7 @@ class _CreateCollabPageState extends State<CreateCollabPage> {
                     ),
                     const SizedBox(height: 25),
                     MyButton2(
-                      //onTap..
+                      //onTap: 
                       text: 'Done',
                     ),
 

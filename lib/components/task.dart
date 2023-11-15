@@ -45,26 +45,27 @@ class Task extends StatelessWidget {
                   height: 3,
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     IconButton(
                         onPressed: () {
                           /*change status*/
                         },
-                        icon: CircleAvatar(
-                          backgroundImage: AssetImage("lib/images/tickcircle.png"),
-                          radius: 15,
-                          
-                        ),
+                        icon: Icon(
+                        Icons.check_circle_outline_sharp,
+                        
+                      ),
                     ),
                     Container(
-                      padding: EdgeInsets.all(8.0),
+                      // padding: EdgeInsets.all(8.0),
+                      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
                       decoration: ShapeDecoration(
                           color: Color(0xFFCDCDFF),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(5),
                           )),
-                      child: Row(
+                      child: 
+                      Row(
                         mainAxisSize: MainAxisSize.min,
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -81,7 +82,9 @@ class Task extends StatelessWidget {
                         ],
                       ),
                     ),
+              
                     Container(
+                      margin: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
                       padding: EdgeInsets.all(8.0),
                       decoration: ShapeDecoration(
                           color: Color(0xFFCDE4FF),
