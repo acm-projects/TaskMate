@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 
 class FriendsTile extends StatelessWidget {
   final String username;
+  final String profilePic;
   
   const FriendsTile({
     Key? key, 
-    required this.username
+    required this.username,
+    required this.profilePic,
   }): super(key: key);
 
   @override
@@ -21,10 +23,15 @@ class FriendsTile extends StatelessWidget {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Container(
-                    height: 32,
-                    child: Image.asset("lib/images/profile.png"),
+                  CircleAvatar(
+                    radius: 20,
+                    backgroundImage: AssetImage(profilePic),
                   ),
+                  // Container(
+                    
+                  //   height: 32,
+                  //   child: Image.asset(profilePic),
+                  // ),
                   const SizedBox(width: 10),
                   Text(
                     username,

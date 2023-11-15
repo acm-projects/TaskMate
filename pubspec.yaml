@@ -107,7 +107,15 @@ flutter:
       - lib/images/zubi_profile.jpg
       - lib/images/profile_pic_2.jpeg
       - lib/images/profile_pic_3.jpeg
-      - 
+      - lib/images/profile_pic_4.jpeg
+      - lib/images/profile_pic_5.jpeg
+      - lib/images/profile_pic_6.jpeg
+      - lib/images/profile_pic_7.jpeg
+      - lib/images/profile_pic_8.jpeg
+      - lib/images/profile_pic_9.jpeg
+      - lib/images/profile_pic_10.jpeg
+
+
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

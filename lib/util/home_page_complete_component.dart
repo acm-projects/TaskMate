@@ -30,15 +30,20 @@ class HomePagePageComponent extends StatelessWidget {
                         children: [
                           IconButton(
                             iconSize: 69,
-                              padding: EdgeInsets.all(0),
-                              icon: const Image(
-                                image: AssetImage(
-                                  'lib/images/profilebig.png'
-                                  ),
+                            padding: EdgeInsets.all(0),
+                            icon: const ClipOval(
+                              child: Image(
+                                image: AssetImage('lib/images/zubi_profile.jpg'),
+                                width: 69,
+                                height: 69,
+                                fit: BoxFit.cover,
                               ),
-                              onPressed: () {
-                                //add functionality
-                              }),
+                            ),
+                            onPressed: () {
+                              // add functionality
+                            },
+                          ),
+
 
                           const SizedBox(width: 15,),
 
@@ -67,7 +72,7 @@ class HomePagePageComponent extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'Welcome, User',
+                                    'Welcome, Zubiya',
                                     style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 10,
@@ -137,7 +142,7 @@ class HomePagePageComponent extends StatelessWidget {
                                     Row(
                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Text(
+                                        const Text(
                                           'Tasks',
                                           style: TextStyle(
                                             color: Colors.black,
@@ -148,7 +153,7 @@ class HomePagePageComponent extends StatelessWidget {
 
                                         IconButton(
                                           onPressed: () {}, 
-                                          icon: Image(image: AssetImage(
+                                          icon: const Image(image: AssetImage(
                                             'lib/images/plus.png',),
                                             height: 20,
                                             ),

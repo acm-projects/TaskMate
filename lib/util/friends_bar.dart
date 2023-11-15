@@ -80,7 +80,7 @@ class FriendsBar extends StatelessWidget {
               children: [
                 CircleAvatar(
                     radius: 25,
-                    backgroundImage: AssetImage('lib/images/profile_pic_2.jpeg'),
+                    backgroundImage: AssetImage('lib/images/profile_pic_10.jpeg'),
                   ),
                 CircleAvatar(
                   radius: 25,
@@ -88,15 +88,15 @@ class FriendsBar extends StatelessWidget {
                 ),
                 CircleAvatar(
                   radius: 25,
-                  backgroundImage: AssetImage('lib/images/profile_pic_3.jpeg'),
+                  backgroundImage: AssetImage('lib/images/profile_pic_4.jpeg'),
                 ),
                 CircleAvatar(
                   radius: 25,
-                  backgroundImage: AssetImage('lib/images/profile_pic_2.jpeg'),
+                  backgroundImage: AssetImage('lib/images/profile_pic_5.jpeg'),
                 ),
                 CircleAvatar(
                   radius: 25,
-                  backgroundImage: AssetImage('lib/images/profile_pic_2.jpeg'),
+                  backgroundImage: AssetImage('lib/images/profile_pic_6.jpeg'),
                 ),
               ],
             ),

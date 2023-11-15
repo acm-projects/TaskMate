@@ -24,10 +24,11 @@ class CardFriend extends StatelessWidget {
             const SizedBox(height: 10),
             Container(
               width: 50,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(40),
-                child:Image.asset(profilePic)
-              )
+              child: 
+              CircleAvatar(
+                    radius: 25,
+                    backgroundImage: AssetImage(profilePic),
+                  ),
             ),
             const SizedBox(height: 10),
             Text('' + username.toString()),

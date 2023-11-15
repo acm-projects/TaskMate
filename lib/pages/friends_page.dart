@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:task_mate/pages/profile_page.dart';
 import 'package:task_mate/util/friends_card.dart';
@@ -80,12 +82,12 @@ class FriendsPage extends StatelessWidget {
                     children: [
                       // ignore: prefer_const_constructors
                       CardFriend(
-                        username: 'Ridwan',
-                        profilePic: "lib/images/ridwan_profile.jpg",
+                        username: 'Shrimoy',
+                        profilePic: "lib/images/profile_pic_8.jpeg",
                       ),
                       const CardFriend(
                         username: 'Jasper',
-                        profilePic: "lib/images/profile.png",
+                        profilePic: "lib/images/profile_pic_9.jpeg",
                       ),
                       const CardFriend(
                         username: 'Friend3',
@@ -117,18 +119,45 @@ class FriendsPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 1),
                 //list of friends to add
-                FriendsTile(username: 'Shrimoy'),
-                FriendsTile(username: "Ubaid"),
-                FriendsTile(username: 'Zubiya'),
-                FriendsTile(username: "Jasper"),
-                FriendsTile(username: 'Ridwan'),
-                FriendsTile(username: "Sarah"),
-                FriendsTile(username: 'Sofia'),
-                FriendsTile(username: "Zunairah"),
-                FriendsTile(username: 'Ethan'),
-                FriendsTile(username: "Safia"),
-                FriendsTile(username: 'Zainab'),
-                FriendsTile(username: "Muriam"),
+                FriendsTile(
+                  username: 'Ridwan', 
+                  profilePic: 'lib/images/ridwan_profile.jpg',
+                  ),
+                FriendsTile(
+                  username: 'Ubaid', 
+                  profilePic: 'lib/images/profile_pic_6.jpeg',
+                ),
+                FriendsTile(
+                  username: 'Devansh',
+                  profilePic: 'lib/images/profile_pic_7.jpeg',
+                ),
+                FriendsTile(username: 'Zunaira',
+                  profilePic: 'lib/images/profile_pic_4.jpeg',
+                ),
+                FriendsTile(username: 'Zainab',
+                  profilePic: 'lib/images/profile_pic_10.jpeg',
+                ),
+                FriendsTile(username: "Farhan",
+                  profilePic: 'lib/images/ridwan_profile.jpg',
+                ),
+                FriendsTile(username: 'Afeefa',
+                  profilePic: 'lib/images/profile_pic_5.jpeg',
+                ),
+                FriendsTile(username: 'Safia',
+                  profilePic: 'lib/images/ridwan_profile.jpg',
+                ),
+                FriendsTile(username: 'Ethan',
+                  profilePic: 'lib/images/ridwan_profile.jpg',
+                ),
+                FriendsTile(username: 'Safia',
+                  profilePic: 'lib/images/ridwan_profile.jpg',
+                ),
+                FriendsTile(username: 'Evelyn',
+                  profilePic: 'lib/images/ridwan_profile.jpg',
+                ),
+                FriendsTile(username: "Muriam",
+                  profilePic: 'lib/images/ridwan_profile.jpg',
+                ),
               ],
             )
           ],
