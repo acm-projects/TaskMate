@@ -14,6 +14,7 @@ import 'pages/home.dart';
 import 'pages/create_task.dart';
 import 'pages/collaborate.dart';
 import 'pages/homepage.dart';
+import 'package:task_mate/firebase_options.dart';
 
 void main() {
   runApp(const MyApp());
