@@ -25,7 +25,7 @@ class ProfilePage extends StatelessWidget {
                   // Logo Profile Image
                   CircleAvatar(
                     radius: 35,
-                    backgroundImage: AssetImage('lib/images/zubi_profile.jpg'),
+                    backgroundImage: AssetImage('lib/images/profile_pic_6.jpeg'),
                   ),
 
                   
@@ -33,7 +33,7 @@ class ProfilePage extends StatelessWidget {
                   const SizedBox(height: 10),
                   // UserName
                   const Text(
-                    'Zubi.ya',
+                    'Ubaid',
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 25,

@@ -35,7 +35,7 @@ class CollaboratePage extends StatelessWidget {
                               padding: EdgeInsets.all(0),
                               icon: CircleAvatar(
                                 backgroundImage:
-                                  AssetImage('lib/images/zubi_profile.jpg'),
+                                  AssetImage('lib/images/profile_pic_6.jpeg'),
                                   backgroundColor: Colors.grey,
                               ),
                               iconSize: 45,

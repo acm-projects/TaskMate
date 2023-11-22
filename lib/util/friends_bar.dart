@@ -79,6 +79,10 @@ class FriendsBar extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 CircleAvatar(
+                  radius: 25,
+                  backgroundImage: AssetImage('lib/images/zubi_profile.jpg'),
+                ),
+                CircleAvatar(
                     radius: 25,
                     backgroundImage: AssetImage('lib/images/profile_pic_10.jpeg'),
                   ),
@@ -94,10 +98,7 @@ class FriendsBar extends StatelessWidget {
                   radius: 25,
                   backgroundImage: AssetImage('lib/images/profile_pic_5.jpeg'),
                 ),
-                CircleAvatar(
-                  radius: 25,
-                  backgroundImage: AssetImage('lib/images/profile_pic_6.jpeg'),
-                ),
+                
               ],
             ),
           ),

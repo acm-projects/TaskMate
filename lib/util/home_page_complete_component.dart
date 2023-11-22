@@ -33,7 +33,7 @@ class HomePagePageComponent extends StatelessWidget {
                             padding: EdgeInsets.all(0),
                             icon: const ClipOval(
                               child: Image(
-                                image: AssetImage('lib/images/zubi_profile.jpg'),
+                                image: AssetImage('lib/images/profile_pic_6.jpeg'),
                                 width: 69,
                                 height: 69,
                                 fit: BoxFit.cover,
@@ -72,7 +72,7 @@ class HomePagePageComponent extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'Welcome, Zubiya',
+                                    'Welcome, Ubaid!',
                                     style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 10,
@@ -88,7 +88,7 @@ class HomePagePageComponent extends StatelessWidget {
                               Row(
                                 children: [
                                   Text(
-                                    'You have 5 tasks to complete!',
+                                    'Let\'s turn your to-do\'s into ta-da\'s',
                                     style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 10,
