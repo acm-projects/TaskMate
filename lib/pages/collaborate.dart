@@ -87,7 +87,7 @@ class CollaboratePage extends StatelessWidget {
                       child: Center(
                           child: Column(
                         children: [
-                          CollabTile(collabName: 'Our CS Project', onTap: () {
+                          CollabTile(collabName: 'ACM Projects', onTap: () {
                             Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -99,21 +99,20 @@ class CollaboratePage extends StatelessWidget {
                             color: Colors.grey.shade200,
                             thickness: 1.5,
                           ),
-                          CollabTile(collabName: 'Our Family Chores', onTap: () {},),
+                          CollabTile(collabName: 'CS Project', onTap: () {},),
                           Divider(
                             height: 1,
                             color: Colors.grey.shade200,
                             thickness: 1.5,
                           ),
-                          CollabTile(collabName: 'Our Gym Group', onTap: () {
-                            
+                          CollabTile(collabName: 'Family Chores', onTap: () {
                           },),
                           Divider(
                             height: 1,
                             color: Colors.grey.shade200,
                             thickness: 1.5,
                           ),
-                          CollabTile(collabName: 'Our Collaboration', onTap: () {}),
+                          CollabTile(collabName: 'Gym Group', onTap: () {}),
                         ],
                       )),
                     ),
@@ -139,12 +138,13 @@ class CollaboratePage extends StatelessWidget {
                       label: Text(
                         'Create a New Collaboration',
                         style: TextStyle(
+                          color: Colors.white,
                           fontSize: 14.0,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'RobotoBold',
                         ),
                       ),
-                      icon: Icon(Icons.add),
+                      icon: Icon(Icons.add, color: Colors.white,),
                     ),
                   ),
                 ),

@@ -129,8 +129,11 @@ class NewPost extends StatelessWidget {
                   IconButton(
                     onPressed: () {},
                     padding: EdgeInsets.zero,
-                    icon:
-                      Image.asset(pfp, height: 30)),
+                    icon: CircleAvatar(
+                      radius: 15,
+                      backgroundImage: AssetImage(pfp),
+                    ),
+                    ),
                   Expanded(
                     child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,

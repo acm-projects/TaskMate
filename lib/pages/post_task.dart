@@ -85,6 +85,7 @@ class _PostTaskPageState extends State<PostTaskPage> {
                                     );
                                   },
                                   style: ElevatedButton.styleFrom(
+                                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
                                     backgroundColor: Colors.white,
                                     //padding: EdgeInsets.symmetric(horizontal: 30, vertical: 0),
                                     minimumSize: Size(80, 26),
@@ -111,6 +112,7 @@ class _PostTaskPageState extends State<PostTaskPage> {
                                     );
                                   },
                                   style: ElevatedButton.styleFrom(
+                                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
                                     backgroundColor: Colors.black,
                                     //padding: EdgeInsets.symmetric(horizontal: 30, vertical: 0),
                                     minimumSize: Size(80, 26),
@@ -142,8 +144,8 @@ class _PostTaskPageState extends State<PostTaskPage> {
                     
                     NewPost(
                       controller: captionController,
-                      pfp: 'lib/images/profilebig.png', 
-                      userName: 'Zubiya', 
+                      pfp: 'lib/images/ubaid_pfp.jpg', 
+                      userName: 'Ubaid', 
                       smallPicture: 'lib/images/tasks1.JPG', 
                       bigPicture: 'lib/images/tasks2.JPG', 
                       progress: 100, 

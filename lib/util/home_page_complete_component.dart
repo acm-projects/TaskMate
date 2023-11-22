@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:task_mate/components/mybuttonrectangular2.dart';
 import 'package:task_mate/pages/post_task.dart';
 import 'package:task_mate/components/post.dart';
+import 'package:task_mate/pages/create_task.dart';
 
 class HomePagePageComponent extends StatelessWidget {
   const HomePagePageComponent({super.key});
@@ -31,13 +32,9 @@ class HomePagePageComponent extends StatelessWidget {
                           IconButton(
                             iconSize: 69,
                             padding: EdgeInsets.all(0),
-                            icon: const ClipOval(
-                              child: Image(
-                                image: AssetImage('lib/images/profile_pic_6.jpeg'),
-                                width: 69,
-                                height: 69,
-                                fit: BoxFit.cover,
-                              ),
+                            icon: CircleAvatar(
+                              radius: 34,
+                              backgroundImage: AssetImage('lib/images/ubaid_pfp.jpg'),
                             ),
                             onPressed: () {
                               // add functionality
@@ -59,7 +56,7 @@ class HomePagePageComponent extends StatelessWidget {
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                       color: Colors.black,
-                                      fontSize: 20,
+                                      fontSize: 25,
                                       fontFamily: 'Jockey One',
                                       fontWeight: FontWeight.w400,
                                       height: 0,
@@ -75,7 +72,7 @@ class HomePagePageComponent extends StatelessWidget {
                                     'Welcome, Ubaid!',
                                     style: TextStyle(
                                     color: Colors.black,
-                                    fontSize: 10,
+                                    fontSize: 12,
                                     fontFamily: 'Roboto',
                                     fontWeight: FontWeight.w400,
                                     ),
@@ -88,10 +85,10 @@ class HomePagePageComponent extends StatelessWidget {
                               Row(
                                 children: [
                                   Text(
-                                    'Let\'s turn your to-do\'s into ta-da\'s',
+                                    'Let\'s turn your to-do\'s into ta-da\'s!',
                                     style: TextStyle(
                                     color: Colors.black,
-                                    fontSize: 10,
+                                    fontSize: 12,
                                     fontFamily: 'Roboto',
                                     fontWeight: FontWeight.w400,
                                     ),
@@ -120,7 +117,7 @@ class HomePagePageComponent extends StatelessWidget {
                             Column(
                               children: [
                                 Container(
-                                  height: 141,
+                                  height: 145,
                                   width: 159,
                                   padding: EdgeInsets.only(left: 10, right: 0, top: 10, bottom: 10),
                                   decoration: ShapeDecoration(
@@ -152,7 +149,13 @@ class HomePagePageComponent extends StatelessWidget {
                                         ),
 
                                         IconButton(
-                                          onPressed: () {}, 
+                                          onPressed: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) => CreateTaskPage()),
+                                            );
+                                          }, 
                                           icon: const Image(image: AssetImage(
                                             'lib/images/plus.png',),
                                             height: 20,
@@ -251,7 +254,7 @@ class HomePagePageComponent extends StatelessWidget {
                                   children: [
                                     Container(
                                       width: 155,
-                                      height: 68,
+                                      height: 73,
                                       padding: const EdgeInsets.all(12),
                                       decoration: ShapeDecoration(
                                           color: Colors.white,
@@ -287,7 +290,7 @@ class HomePagePageComponent extends StatelessWidget {
                                             Row(
                                               children: [
                                                 Text(
-                                                  '78',
+                                                  '10',
                                                   style: TextStyle(
                                                       color: Colors.green,
                                                       fontSize: 20,
@@ -351,9 +354,13 @@ class HomePagePageComponent extends StatelessWidget {
 
                         const SizedBox(height: 25),
 
-                        Post(pfp: 'lib/images/zubi_profile.jpg', userName: 'Zubiya', timeSincePost: '16 hours ago', smallPicture: 'lib/images/tasks6.JPG', bigPicture: 'lib/images/tasks4.JPG', progress: 70, caption: 'halfway done with my assignment'),
+                        Post(pfp: 'lib/images/ridwan_profile.jpg', userName: 'Ridwan', timeSincePost: '5 hours ago', smallPicture: 'lib/images/tasks4.JPG', bigPicture: 'lib/images/tasks6.JPG', progress: 50, caption: 'halfway done with my last assignment'),
 
-                        const SizedBox(height: 25,),
+                        const SizedBox(height: 25),
+
+                        Post(pfp: 'lib/images/profile_pic_7.jpeg', userName: 'Devansh', timeSincePost: '7 hours ago', smallPicture: 'lib/images/tasks3.JPG', bigPicture: 'lib/images/tasks1.JPG', progress: 80, caption: 'almost finished with my discrete hw'),
+
+                        const SizedBox(height: 25),
                   ],
                 ),
               ],

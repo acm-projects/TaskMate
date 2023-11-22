@@ -18,9 +18,9 @@ class _HomePage extends State<HomePage> {
 
   final List<Widget> _pages = [
     const HomePagePageComponent(),
-    ProfilePage(),
     TasksPage(),
     CollaboratePage(),
+    ProfilePage(),
   ];
 
   void _onItemTapped(int index) {
@@ -47,21 +47,22 @@ class _HomePage extends State<HomePage> {
               text: 'Home',
             ),
             GButton(
-              icon: Icons.account_circle,
-              text: 'Profile',
-            ),
-            GButton(
               icon: Icons.playlist_add_check_rounded,
               text: 'My Tasks',
+            ),
+            GButton(
+              icon: Icons.textsms_sharp,
+              text: 'Collaborate',
+            ),
+            GButton(
+              icon: Icons.account_circle,
+              text: 'Profile',
             ),
             // GButton(
             //   icon: Icons.add_comment_rounded,
             //   text: 'Collaborate',
             // ),
-            GButton(
-              icon: Icons.textsms_sharp,
-              text: 'Collaborate',
-            ),
+            
           ],
         ),
       ),

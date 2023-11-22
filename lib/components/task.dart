@@ -35,8 +35,7 @@ class Task extends StatelessWidget {
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 14,
-                        fontFamily: 'Roboto',
-                        fontWeight: FontWeight.w400,
+                        fontFamily: 'RobotoBold',
                       ),
                     ),
                   ],

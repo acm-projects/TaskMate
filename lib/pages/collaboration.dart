@@ -7,6 +7,8 @@ import 'package:task_mate/components/textfield2.dart';
 import 'package:task_mate/components/choicebox.dart';
 import 'package:task_mate/components/task.dart';
 import 'package:task_mate/components/collabtile.dart';
+import 'package:task_mate/pages/collab_attachments.dart';
+import 'package:task_mate/pages/collab_contributors.dart';
 
 class CollaborationPage extends StatefulWidget {
   const CollaborationPage({Key? key}) : super(key: key);
@@ -48,7 +50,6 @@ class _CollaborationPageState extends State<CollaborationPage>
 
                           //iconSize: 24,
                           onPressed: () {
-                            //add functionality
                             Navigator.pop(context);
                           }),
                     ]),
@@ -56,7 +57,7 @@ class _CollaborationPageState extends State<CollaborationPage>
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'Our Collaboration',
+                          'ACM Projects',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             color: Colors.black,
@@ -98,8 +99,15 @@ class _CollaborationPageState extends State<CollaborationPage>
                         child: Column(
                           children: [
                             GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ContributorsPage()),
+                                );
+                              },
                               child: Container(
-                                height: 60,
+                                height: 64,
                                 child: Padding(
                                   padding: EdgeInsets.symmetric(vertical: 12),
                                   //child: Center(
@@ -145,7 +153,7 @@ class _CollaborationPageState extends State<CollaborationPage>
                                               Row(
                                                 children: [
                                                   Text(
-                                                    'Person1, person2, person3, person4, person5, ...',
+                                                    'Ridwan, Ubaid, Zubiya, Jasper, Shrimoy, Devansh',
                                                     style: TextStyle(
                                                       color: Colors.black
                                                           .withOpacity(0.5),
@@ -173,8 +181,9 @@ class _CollaborationPageState extends State<CollaborationPage>
                               thickness: 1.5,
                             ),
                             GestureDetector(
+                               onTap: () {},
                               child: Container(
-                                height: 60,
+                                height: 64,
                                 child: Padding(
                                   padding: EdgeInsets.symmetric(vertical: 12),
                                   //child: Center(
@@ -247,8 +256,15 @@ class _CollaborationPageState extends State<CollaborationPage>
                               thickness: 1.5,
                             ),
                             GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => AttachmentsPage()),
+                                );
+                              },
                               child: Container(
-                                height: 60,
+                                height: 64,
                                 child: Padding(
                                   padding: EdgeInsets.symmetric(vertical: 12),
                                   //child: Center(
@@ -336,9 +352,13 @@ class _CollaborationPageState extends State<CollaborationPage>
                             ),
                             controller: _tabController,
                             isScrollable: true,
-                            labelPadding: EdgeInsets.only(right: 44, left: 44),
+                            labelPadding: EdgeInsets.zero,
+                            //labelPadding: EdgeInsets.only(right: 44, left: 44),
+                            tabAlignment: TabAlignment.start,
                             tabs: [
                               Tab(
+                                child: Container(
+                                  width: 168,
                                 child: Text(
                                   'Personal Tasks',
                                   textAlign: TextAlign.center,
@@ -350,9 +370,10 @@ class _CollaborationPageState extends State<CollaborationPage>
                                   ),
                                 ),
                               ),
+                              ),
                               Tab(
                                 child: Container(
-                                  width: 83,
+                                  width: 168,
                                   child: Text(
                                     'Group Tasks',
                                     textAlign: TextAlign.center,
@@ -368,32 +389,49 @@ class _CollaborationPageState extends State<CollaborationPage>
                             ],
                           )),
                     ),
-                    Expanded(
-                      child: TabBarView(
+                    
+                    Container(
+                      height: 300,
+                      width: 400,
+                        child: TabBarView(
                         controller: _tabController,
                         children: [
-                          ListView.builder(
-                              physics: BouncingScrollPhysics(),
-                              shrinkWrap: true,
-                              itemCount: 5,
-                              itemBuilder: (context, index) {
-                                return TaskTile(
-                                    priority: 'priority',
-                                    category: 'category',
-                                    deadline: 'deadline',
-                                    taskName: 'taskName');
-                              }),
-                          ListView.builder(
-                              physics: BouncingScrollPhysics(),
-                              shrinkWrap: true,
-                              itemCount: 5,
-                              itemBuilder: (context, index) {
-                                return TaskTile(
-                                    priority: 'priority',
-                                    category: 'category',
-                                    deadline: 'deadline',
-                                    taskName: 'taskName');
-                              }),
+                          ListView(
+                            physics: BouncingScrollPhysics(),
+                            shrinkWrap: true,
+                            children: [
+                              TaskTile(
+                                priority: 'High Priority',
+                                deadline: '11/7/23',
+                                taskName: 'Code Homepage'),
+                              TaskTile(
+                                priority: 'Medium Priority',
+                                deadline: '10/12/23',
+                                taskName: 'Figma Design'),
+                              TaskTile(
+                                priority: 'High Priority',
+                                deadline: '11/15/23',
+                                taskName: 'Presentation Script'),
+                            ],
+                          ),
+                          ListView(
+                            physics: BouncingScrollPhysics(),
+                            shrinkWrap: true,
+                            children: [
+                              TaskTile(
+                                priority: 'High Priority',
+                                deadline: '11/14/23',
+                                taskName: 'Presentation Practice'),
+                              TaskTile(
+                                priority: 'High Priority',
+                                deadline: '11/12/23',
+                                taskName: 'Finish Frontend pages'),
+                              TaskTile(
+                                priority: 'High Priority',
+                                deadline: '11/20/23',
+                                taskName: 'Integrate Frontend and Backend'),
+                            ],
+                          ),
                           
                         ],
                       ),

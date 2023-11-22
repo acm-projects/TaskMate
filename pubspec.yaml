@@ -110,6 +110,7 @@ flutter:
       - lib/images/bell.png
       - lib/images/celebrate.png
       - lib/images/zubi_profile.jpg
+      - lib/images/ubaid_pfp.jpg
       - lib/images/profile_pic_2.jpeg
       - lib/images/profile_pic_3.jpeg
       - lib/images/profile_pic_4.jpeg

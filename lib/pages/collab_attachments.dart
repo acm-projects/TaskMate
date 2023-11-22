@@ -39,9 +39,8 @@ class AttachmentsPage extends StatelessWidget {
                                 height: 24,
                               ),
 
-                              //iconSize: 24,
                               onPressed: () {
-                                //add functionality
+                                Navigator.pop(context);
                               }),
                         ]),
 

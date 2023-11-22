@@ -27,11 +27,11 @@ class CollabTile extends StatelessWidget {
                 Row(
                   //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    // Image.asset('lib/images/collabpic.png'),
-                    Icon(
-                      Icons.computer_rounded,
-                      size: 25,
-                    ),
+                    Image.asset('lib/images/collabpic.png'),
+                    // Icon(
+                    //   Icons.computer_rounded,
+                    //   size: 25,
+                    // ),
 
                     const SizedBox(width: 8,),
 

@@ -6,14 +6,14 @@ class TaskTile extends StatelessWidget {
   //final Function()? status;
   final String taskName;
   final String priority;
-  final String category;
+  //final String category;
   final String deadline;
 
   const TaskTile({
     super.key,
     //required this.status,
     required this.priority,
-    required this.category,
+    //required this.category,
     required this.deadline,
     required this.taskName,
   });
@@ -22,8 +22,8 @@ class TaskTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-        height: 75,
+        margin: EdgeInsets.symmetric(horizontal: 30, vertical: 0),
+        height: 79,
         child: Padding(
           padding: EdgeInsets.symmetric(vertical: 5.5),
           //child: Center(
@@ -88,32 +88,32 @@ class TaskTile extends StatelessWidget {
 
                           const SizedBox(width: 10,),
 
-                          Container(
-                            padding: EdgeInsets.all(8.0),
-                            decoration: ShapeDecoration(
-                                color: Color(0xFFCDE4FF),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(5),
-                                )),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Text(
-                                  category,
-                                  style: TextStyle(
-                                    color: Color(0xFF808080),
-                                    fontSize: 12,
-                                    fontFamily: 'Roboto',
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
+                          // Container(
+                          //   padding: EdgeInsets.all(8.0),
+                          //   decoration: ShapeDecoration(
+                          //       color: Color(0xFFCDE4FF),
+                          //       shape: RoundedRectangleBorder(
+                          //         borderRadius: BorderRadius.circular(5),
+                          //       )),
+                          //   child: Row(
+                          //     mainAxisSize: MainAxisSize.min,
+                          //     mainAxisAlignment: MainAxisAlignment.center,
+                          //     crossAxisAlignment: CrossAxisAlignment.center,
+                          //     children: [
+                          //       Text(
+                          //         category,
+                          //         style: TextStyle(
+                          //           color: Color(0xFF808080),
+                          //           fontSize: 12,
+                          //           fontFamily: 'Roboto',
+                          //           fontWeight: FontWeight.w400,
+                          //         ),
+                          //       ),
+                          //     ],
+                          //   ),
+                          // ),
 
-                          const SizedBox(width: 10,),
+                          // const SizedBox(width: 10,),
 
                           Container(
                             padding: EdgeInsets.all(8.0),

@@ -200,7 +200,7 @@ class Post extends StatelessWidget {
               top: 390,
               child: IconButton(
                 iconSize: 25,
-                icon: Image(image: AssetImage('lib/images/bell.png',)),
+                icon: Image.asset('lib/images/bell.png', width: 30,),
                 onPressed: () {
                   //send notification for nudge
                 },
@@ -221,7 +221,7 @@ class Post extends StatelessWidget {
 
             Container(
               width: 342,
-              height: 46,
+              height: 47,
               padding: const EdgeInsets.all(8),
               decoration: ShapeDecoration(
                 color: Colors.white,

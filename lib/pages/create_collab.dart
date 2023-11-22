@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:task_mate/components/mybuttonrectangular.dart';
+import 'package:task_mate/components/mybuttonrectangular2.dart';
 import 'package:task_mate/components/textfield2.dart';
 import 'package:task_mate/components/choicebox.dart';
 
@@ -197,9 +197,11 @@ class _CreateCollabPageState extends State<CreateCollabPage> {
                       ),
                     ),
                     const SizedBox(height: 25),
-                    MyButton2(
-                      //onTap: 
-                      text: 'Done',
+                    MyButton3(
+                      text: 'Done', 
+                      onPressed: () {
+                        Navigator.pop(context);
+                      }
                     ),
 
                     const SizedBox(height: 40),

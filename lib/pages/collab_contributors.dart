@@ -38,9 +38,8 @@ class ContributorsPage extends StatelessWidget {
                                 height: 24,
                               ),
 
-                              //iconSize: 24,
                               onPressed: () {
-                                //add functionality
+                                Navigator.pop(context);
                               }),
                         ]),
 
@@ -146,12 +145,13 @@ class ContributorsPage extends StatelessWidget {
                       label: Text(
                         'Add Contributor',
                         style: TextStyle(
+                          color: Colors.white,
                           fontSize: 14.0,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'RobotoBold',
                         ),
                       ),
-                      icon: Icon(Icons.add),
+                      icon: Icon(Icons.add, color: Colors.white,),
                     ),
                   ),
                 ),

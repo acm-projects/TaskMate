@@ -87,8 +87,7 @@ class TasksPage extends StatelessWidget {
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 14,
-                                  fontFamily: 'Roboto',
-                                  fontWeight: FontWeight.w400,
+                                  fontFamily: 'RobotoBold',
                                 ),
                               ),
                             ],
@@ -163,8 +162,7 @@ class TasksPage extends StatelessWidget {
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 14,
-                                  fontFamily: 'Roboto',
-                                  fontWeight: FontWeight.w400,
+                                  fontFamily: 'RobotoBold',
                                 ),
                               ),
                             ],
@@ -184,7 +182,7 @@ class TasksPage extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                '50',
+                                '25',
                                 textAlign: TextAlign.right,
                                 style: TextStyle(
                                   color: Colors.black.withOpacity(0.5),
@@ -235,7 +233,7 @@ class TasksPage extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                '100',
+                                '10',
                                 textAlign: TextAlign.right,
                                 style: TextStyle(
                                   color: Colors.black.withOpacity(0.5),
@@ -253,43 +251,38 @@ class TasksPage extends StatelessWidget {
                     Task(
                         priority: 'High Priority',
                         category: 'Education',
-                        deadline: '12/31/23',
+                        deadline: '12/4/23',
                         taskName: 'CS Homework'),
                     Task(
-                        priority: 'Medium Priority',
+                        priority: 'High Priority',
                         category: 'Work',
-                        deadline: '11/2/23',
-                        taskName: 'My Weekly Shift'),
+                        deadline: '11/29/23',
+                        taskName: 'Apply for internships'),
                     Task(
                         priority: 'Low Priority',
                         category: 'Home',
-                        deadline: '10/29/23',
+                        deadline: '12/5/23',
                         taskName: 'Clean room'),
                     Task(
                         priority: 'High Priority',
+                        category: 'Work',
+                        deadline: '11/27/23',
+                        taskName: 'Weekly Shift'),
+                    Task(
+                        priority: 'Medium Priority',
                         category: 'Education',
-                        deadline: '12/31/23',
-                        taskName: 'CS Homework'),
+                        deadline: '11/18/23',
+                        taskName: 'Discrete Homework'),
+                    Task(
+                        priority: 'Medium Priority',
+                        category: 'Education',
+                        deadline: '12/2/23',
+                        taskName: 'Advisor Meeting'),
                     Task(
                         priority: 'High Priority',
                         category: 'Education',
-                        deadline: '12/31/23',
-                        taskName: 'CS Homework'),
-                    Task(
-                        priority: 'High Priority',
-                        category: 'Education',
-                        deadline: '12/31/23',
-                        taskName: 'CS Homework'),
-                    Task(
-                        priority: 'High Priority',
-                        category: 'Education',
-                        deadline: '12/31/23',
-                        taskName: 'CS Homework'),
-                    Task(
-                        priority: 'High Priority',
-                        category: 'Education',
-                        deadline: '12/31/23',
-                        taskName: 'CS Homework'),
+                        deadline: '11/27/23',
+                        taskName: 'Calc DHW'),
                   ],
                 ),
                 Align(
@@ -312,12 +305,13 @@ class TasksPage extends StatelessWidget {
                       label: Text(
                         'Create a New Task',
                         style: TextStyle(
+                          color: Colors.white,
                           fontSize: 14.0,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'RobotoBold',
                         ),
                       ),
-                      icon: Icon(Icons.add),
+                      icon: Icon(Icons.add, color: Colors.white,),
                     ),
                   ),
                 ),

@@ -29,7 +29,7 @@ class IntroPage extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.black,
-                  fontSize: 48,
+                  fontSize: 60,
                   fontFamily: 'Jockey One',
                   fontWeight: FontWeight.w400,
                   height: 0,
@@ -37,11 +37,11 @@ class IntroPage extends StatelessWidget {
               ),
             ),
             Text(
-              'Turn your to-dos into ta-das',
+              'Turn your to-dos into ta-das!',
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 12,
+                fontSize: 15,
                 fontFamily: 'Actor',
                 fontWeight: FontWeight.w400,
                 height: 0,
@@ -51,8 +51,8 @@ class IntroPage extends StatelessWidget {
             const SizedBox(height: 134),
 
             Container(
-              width: 181,
-              height: 34,
+              width: 240,
+              height: 40,
               padding: const EdgeInsets.all(10),
               decoration: ShapeDecoration(
                 color: Color(0xFF150000),
@@ -98,10 +98,9 @@ class IntroPage extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 11,
+                    fontSize: 12,
                     fontFamily: 'Actor',
                     fontWeight: FontWeight.w400,
-                    height: 0,
                   ),
                 ),
               ),
