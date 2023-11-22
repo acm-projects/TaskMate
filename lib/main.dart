@@ -5,6 +5,7 @@ import 'package:task_mate/pages/create_collab.dart';
 import 'package:task_mate/pages/memories_page.dart';
 import 'package:task_mate/pages/tasks.dart';
 import 'package:task_mate/pages/friends_page.dart';
+import 'package:task_mate/pages/testcamera.dart';
 import 'package:task_mate/pages/testcamera2.dart';
 import 'pages/intro_page.dart';
 import 'package:task_mate/pages/intro_page.dart';

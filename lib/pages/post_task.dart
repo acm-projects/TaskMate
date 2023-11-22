@@ -7,17 +7,14 @@ import 'package:task_mate/pages/homepageubaid.dart';
 import 'package:task_mate/components/newpost.dart';
 import 'package:task_mate/components/task.dart';
 
-class PostTaskPage extends StatefulWidget {
-  const PostTaskPage({Key? key}) : super(key: key);
+class PostTaskPage extends StatelessWidget {
 
-  @override
-  _PostTaskPageState createState() => _PostTaskPageState();
-}
-
-class _PostTaskPageState extends State<PostTaskPage> {
-  // DateTime _dateTime = DateTime.now();
-  // TimeOfDay _timeOfDay = TimeOfDay.now();
   final captionController = TextEditingController();
+  final String imagePath;
+
+  PostTaskPage({super.key, required this.imagePath});
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -37,9 +34,7 @@ class _PostTaskPageState extends State<PostTaskPage> {
                 ListView(
                   padding: EdgeInsets.only(right: 25, left: 25),
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start, 
-                      children: [
+                    Row(mainAxisAlignment: MainAxisAlignment.start, children: [
                       IconButton(
                           icon: Image(
                             image: AssetImage(
@@ -72,7 +67,6 @@ class _PostTaskPageState extends State<PostTaskPage> {
                             ),
                           ],
                         ),
-
                         Column(
                           children: [
                             Row(
@@ -81,11 +75,13 @@ class _PostTaskPageState extends State<PostTaskPage> {
                                   onPressed: () {
                                     Navigator.push(
                                       context,
-                                      MaterialPageRoute(builder: (context) => HomePage()),
+                                      MaterialPageRoute(
+                                          builder: (context) => HomePage()),
                                     );
                                   },
                                   style: ElevatedButton.styleFrom(
-                                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(5)),
                                     backgroundColor: Colors.white,
                                     //padding: EdgeInsets.symmetric(horizontal: 30, vertical: 0),
                                     minimumSize: Size(80, 26),
@@ -101,18 +97,20 @@ class _PostTaskPageState extends State<PostTaskPage> {
                                     ),
                                   ),
                                 ),
-
-                                const SizedBox(width: 6,),
-
+                                const SizedBox(
+                                  width: 6,
+                                ),
                                 ElevatedButton(
                                   onPressed: () {
                                     Navigator.push(
                                       context,
-                                      MaterialPageRoute(builder: (context) => HomePage()),
+                                      MaterialPageRoute(
+                                          builder: (context) => HomePage()),
                                     );
                                   },
                                   style: ElevatedButton.styleFrom(
-                                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(5)),
                                     backgroundColor: Colors.black,
                                     //padding: EdgeInsets.symmetric(horizontal: 30, vertical: 0),
                                     minimumSize: Size(80, 26),
@@ -141,23 +139,22 @@ class _PostTaskPageState extends State<PostTaskPage> {
                     const SizedBox(
                       height: 15,
                     ),
-                    
                     NewPost(
-                      controller: captionController,
-                      pfp: 'lib/images/ubaid_pfp.jpg', 
-                      userName: 'Ubaid', 
-                      smallPicture: 'lib/images/tasks1.JPG', 
-                      bigPicture: 'lib/images/tasks2.JPG', 
-                      progress: 100, 
-                      caption: 'fridays at cuppa!'
-                    ),
-
+                        controller: captionController,
+                        pfp: 'lib/images/ubaid_pfp.jpg',
+                        userName: 'Ubaid',
+                        //smallPicture: 'lib/images/tasks1.JPG',
+                        bigPicture: imagePath,
+                        progress: 100,
+                        caption: 'fridays at cuppa!'),
                     const SizedBox(
                       height: 15,
                     ),
-
-                    Task(priority: 'Medium Priority', category: 'Education', deadline: '11/15/23', taskName: 'CS Homework')
-
+                    Task(
+                        priority: 'Medium Priority',
+                        category: 'Education',
+                        deadline: '11/15/23',
+                        taskName: 'CS Homework')
                   ],
                 ),
               ],

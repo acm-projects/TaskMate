@@ -3,6 +3,7 @@ import 'package:task_mate/components/mybuttonrectangular2.dart';
 import 'package:task_mate/pages/post_task.dart';
 import 'package:task_mate/components/post.dart';
 import 'package:task_mate/pages/create_task.dart';
+import 'package:task_mate/pages/testcamera.dart';
 
 class HomePagePageComponent extends StatelessWidget {
   const HomePagePageComponent({super.key});
@@ -343,7 +344,7 @@ class HomePagePageComponent extends StatelessWidget {
                           onPressed: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => PostTaskPage()),
+                              MaterialPageRoute(builder: (context) => testCamera()),
                             );
                           },
                           ),

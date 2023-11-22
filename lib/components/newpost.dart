@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:task_mate/components/textfield1.dart';
 
@@ -5,7 +7,7 @@ class NewPost extends StatelessWidget {
   final controller;
   final String pfp;
   final String userName;
-  final String smallPicture;
+  //final String smallPicture;
   final String bigPicture;
   final int progress;
   final String caption;
@@ -15,7 +17,7 @@ class NewPost extends StatelessWidget {
     required this.controller,
     required this.pfp,
     required this.userName,
-    required this.smallPicture,
+    //required this.smallPicture,
     required this.bigPicture,
     required this.progress,
     required this.caption,
@@ -47,10 +49,7 @@ class NewPost extends StatelessWidget {
                   borderRadius: BorderRadius.circular(0),
                 ),
                 clipBehavior: Clip.antiAlias,
-                child: Image.asset(
-                  bigPicture,
-                  fit: BoxFit.cover,
-                ),
+                child: Image.file(File(bigPicture), fit: BoxFit.fill,)
               ),
             ),
             Positioned(
@@ -93,22 +92,22 @@ class NewPost extends StatelessWidget {
             ),
 
             //small picture
-            Positioned(
-              left: 14,
-              top: 57,
-              child: Container(
-                width: 117.49,
-                height: 155.77,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(color: Colors.black, width: 2)),
-                clipBehavior: Clip.antiAlias,
-                child: Image.asset(
-                  smallPicture,
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
+            // Positioned(
+            //   left: 14,
+            //   top: 57,
+            //   child: Container(
+            //     width: 117.49,
+            //     height: 155.77,
+            //     decoration: BoxDecoration(
+            //         borderRadius: BorderRadius.circular(10),
+            //         border: Border.all(color: Colors.black, width: 2)),
+            //     clipBehavior: Clip.antiAlias,
+            //     child: Image.asset(
+            //       smallPicture,
+            //       fit: BoxFit.cover,
+            //     ),
+            //   ),
+            // ),
 
             Container(
               width: 342,
