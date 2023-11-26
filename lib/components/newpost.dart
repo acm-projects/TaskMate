@@ -10,7 +10,6 @@ class NewPost extends StatelessWidget {
   //final String smallPicture;
   final String bigPicture;
   final int progress;
-  final String caption;
 
   const NewPost({
     super.key,
@@ -20,7 +19,6 @@ class NewPost extends StatelessWidget {
     //required this.smallPicture,
     required this.bigPicture,
     required this.progress,
-    required this.caption,
   });
 
   @override

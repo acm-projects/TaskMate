@@ -61,7 +61,7 @@ class TasksPage extends StatelessWidget {
                     ),
                     Container(
                       width: 327,
-                      padding: EdgeInsets.all(25),
+                      padding: EdgeInsets.all(15),
                       clipBehavior: Clip.antiAlias,
                       decoration: ShapeDecoration(
                         color: Colors.white,
@@ -111,7 +111,7 @@ class TasksPage extends StatelessWidget {
                             children: [
                               const SizedBox(height: 5),
                               Container(
-                                  margin: const EdgeInsets.only(top: 5.0),
+                                  //margin: const EdgeInsets.only(top: 5.0),
                                   child: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,

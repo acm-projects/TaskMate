@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:task_mate/components/mybuttonrectangular.dart';
 import 'package:task_mate/components/textfield2.dart';
+import 'package:task_mate/pages/camera_page.dart';
 import 'package:task_mate/pages/homepageubaid.dart';
 import 'package:task_mate/components/newpost.dart';
 import 'package:task_mate/components/task.dart';
@@ -102,10 +103,10 @@ class PostTaskPage extends StatelessWidget {
                                 ),
                                 ElevatedButton(
                                   onPressed: () {
-                                    Navigator.push(
+                                    Navigator.pop(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => HomePage()),
+                                          builder: (context) => testCamera()),
                                     );
                                   },
                                   style: ElevatedButton.styleFrom(
@@ -140,21 +141,21 @@ class PostTaskPage extends StatelessWidget {
                       height: 15,
                     ),
                     NewPost(
-                        controller: captionController,
-                        pfp: 'lib/images/ubaid_pfp.jpg',
-                        userName: 'Ubaid',
-                        //smallPicture: 'lib/images/tasks1.JPG',
-                        bigPicture: imagePath,
-                        progress: 100,
-                        caption: 'fridays at cuppa!'),
+                      controller: captionController,
+                      pfp: 'lib/images/ubaid_pfp.jpg',
+                      userName: 'Ubaid',
+                      //smallPicture: 'lib/images/tasks1.JPG',
+                      bigPicture: imagePath,
+                      progress: 100,
+                    ),
                     const SizedBox(
                       height: 15,
                     ),
                     Task(
-                        priority: 'Medium Priority',
+                        priority: 'High Priority',
                         category: 'Education',
-                        deadline: '11/15/23',
-                        taskName: 'CS Homework')
+                        deadline: '11/29/23',
+                        taskName: 'ACM Projects')
                   ],
                 ),
               ],
