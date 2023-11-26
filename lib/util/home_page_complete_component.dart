@@ -3,7 +3,8 @@ import 'package:task_mate/components/mybuttonrectangular2.dart';
 import 'package:task_mate/pages/post_task.dart';
 import 'package:task_mate/components/post.dart';
 import 'package:task_mate/pages/create_task.dart';
-import 'package:task_mate/pages/testcamera.dart';
+import 'package:task_mate/pages/camera_page.dart';
+import 'package:task_mate/pages/profile_page.dart';
 
 class HomePagePageComponent extends StatelessWidget {
   const HomePagePageComponent({super.key});
@@ -39,6 +40,10 @@ class HomePagePageComponent extends StatelessWidget {
                             ),
                             onPressed: () {
                               // add functionality
+                              // Navigator.push(
+                              //   context,
+                              //   MaterialPageRoute(builder: (context) => ProfilePage()),
+                              // );
                             },
                           ),
 
@@ -120,7 +125,7 @@ class HomePagePageComponent extends StatelessWidget {
                                 Container(
                                   height: 145,
                                   width: 159,
-                                  padding: EdgeInsets.only(left: 10, right: 0, top: 10, bottom: 10),
+                                  padding: EdgeInsets.all(10),
                                   decoration: ShapeDecoration(
                                     color: Colors.white,
                                     shape: RoundedRectangleBorder(
@@ -157,8 +162,8 @@ class HomePagePageComponent extends StatelessWidget {
                                                   builder: (context) => CreateTaskPage()),
                                             );
                                           }, 
-                                          icon: const Image(image: AssetImage(
-                                            'lib/images/plus.png',),
+                                          icon: const Image(
+                                            image: AssetImage('lib/images/plus.png',),
                                             height: 20,
                                             ),
                                           padding: EdgeInsets.zero,
@@ -166,23 +171,6 @@ class HomePagePageComponent extends StatelessWidget {
                                         )
                                       ],
                                     ),
-
-                                    const SizedBox(height: 3,),
-
-                                    Row(
-                                      children: [
-                                        Text(
-                                          'ACM Presentation',
-                                          style: TextStyle(
-                                            color: Colors.black,
-                                            fontSize: 10,
-                                            fontFamily: 'Roboto',
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-
-                                    const SizedBox(height: 3,),
 
                                     Row(
                                       children: [
@@ -197,12 +185,12 @@ class HomePagePageComponent extends StatelessWidget {
                                       ],
                                     ),
 
-                                    const SizedBox(height: 3),
+                                    const SizedBox(height: 3,),
 
                                     Row(
                                       children: [
                                         Text(
-                                          'My Weekly Shift',
+                                          'Apply for internships',
                                           style: TextStyle(
                                             color: Colors.black,
                                             fontSize: 10,
@@ -218,6 +206,21 @@ class HomePagePageComponent extends StatelessWidget {
                                       children: [
                                         Text(
                                           'Clean room',
+                                          style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 10,
+                                            fontFamily: 'Roboto',
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+
+                                    const SizedBox(height: 3),
+
+                                    Row(
+                                      children: [
+                                        Text(
+                                          'Weekly Shift',
                                           style: TextStyle(
                                             color: Colors.black,
                                             fontSize: 10,

@@ -83,28 +83,42 @@ class IntroPage extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 8),
-            GestureDetector(
-              onTap: (){
+
+            Container(
+              width: 240,
+              height: 38,
+              decoration: ShapeDecoration(
+                color: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+              child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  elevation: 0.0,
+                  shadowColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                ),
+              onPressed: (){
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => SignInPage()),
                   );
               },
-              child: MouseRegion(
-                cursor: SystemMouseCursors.click,
-                child: Text(
-                  'Sign In',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 12,
-                    fontFamily: 'Actor',
-                    fontWeight: FontWeight.w400,
-                  ),
+              child: Text(
+                'Sign In',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 12,
+                  fontFamily: 'Actor',
+                  fontWeight: FontWeight.w500,
                 ),
               ),
             
+            ),
             ),
             
             
