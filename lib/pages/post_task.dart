@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:task_mate/components/mybuttonrectangular.dart';
 import 'package:task_mate/components/textfield2.dart';
-import 'package:task_mate/pages/camera_page.dart';
+//import 'package:task_mate/pages/camera_page.dart';
 import 'package:task_mate/pages/homepageubaid.dart';
 import 'package:task_mate/components/newpost.dart';
 import 'package:task_mate/components/task.dart';
@@ -103,11 +103,11 @@ class PostTaskPage extends StatelessWidget {
                                 ),
                                 ElevatedButton(
                                   onPressed: () {
-                                    Navigator.pop(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => testCamera()),
-                                    );
+                                    //Navigator.pop(
+                                    //  context,
+                                    //  MaterialPageRoute(
+                                    //      builder: (context) => testCamera()),
+                                    //);
                                   },
                                   style: ElevatedButton.styleFrom(
                                     shape: RoundedRectangleBorder(

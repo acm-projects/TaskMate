@@ -9,7 +9,12 @@ import 'package:task_mate/pages/signup_page1.dart';
 import 'package:task_mate/pages/signup_page3.dart';
 
 class SignUpPage2 extends StatelessWidget {
-  SignUpPage2({super.key});
+  final String username;
+
+  SignUpPage2({
+    Key? key,
+    required this.username,
+  }) : super(key: key);
 
   //text editing controllers
   final dobController = TextEditingController();
@@ -107,7 +112,7 @@ class SignUpPage2 extends StatelessWidget {
                       child: Column(
                         children: [
                           Text(
-                            'Hey (Name), when\'s your birthday?',
+                            'Hey $username, when\'s your birthday?',
                             style: TextStyle(
                               fontFamily: 'Roboto',
                               fontSize: 20,
@@ -133,7 +138,10 @@ class SignUpPage2 extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => SignUpPage3()),
+                        MaterialPageRoute(builder: (context) => SignUpPage3(
+                          username: this.username,
+                          dob: dobController.text
+                        )),
                       );
                     },
                     text: 'Continue',

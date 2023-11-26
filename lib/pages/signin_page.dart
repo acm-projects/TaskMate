@@ -36,7 +36,7 @@ class _SignInPageState extends State<SignInPage> {
         email:  emailController.text,
         password: passwordController.text,
       );
-      //Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+      Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
     } on FirebaseAuthException catch(e) {
       //TODO display error message on screen
       errorMessage = e.message;

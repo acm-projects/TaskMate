@@ -12,9 +12,6 @@ class SignUpPage1 extends StatelessWidget {
 
   //text editing controllers
   final nameController = TextEditingController();
-  final dobController = TextEditingController();
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
 
   //sign user in method (not yet implemented)
   //void signUserIn() {}
@@ -138,7 +135,7 @@ class SignUpPage1 extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => SignUpPage2()),
+                        MaterialPageRoute(builder: (context) => SignUpPage2(username : nameController.text)),
                       );
                     },
                     text: 'Continue',

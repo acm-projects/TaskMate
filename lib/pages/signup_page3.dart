@@ -11,8 +11,13 @@ import 'package:task_mate/pages/signup_page3.dart';
 import 'package:task_mate/pages/signup_page4.dart';
 
 class SignUpPage3 extends StatelessWidget {
-  SignUpPage3({super.key});
+  final String username, dob;
 
+  SignUpPage3({
+    Key? key,
+    required this.username,
+    required this.dob,
+  }) : super(key: key);
   //text editing controllers
   final emailController = TextEditingController();
 
@@ -49,7 +54,7 @@ class SignUpPage3 extends StatelessWidget {
                           Navigator.pop(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => SignUpPage2()),
+                                builder: (context) => SignUpPage2(username: this.username)),
                           );
                         },
                       ),
@@ -132,7 +137,11 @@ class SignUpPage3 extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => SignUpPage4()),
+                        MaterialPageRoute(builder: (context) => SignUpPage4(
+                          username : this.username,
+                          dob : this.dob,
+                          email : emailController.text
+                        )),
                       );
                     },
                     text: 'Continue',

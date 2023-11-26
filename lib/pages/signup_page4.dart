@@ -9,13 +9,39 @@ import 'package:task_mate/pages/signin_page.dart';
 import 'package:task_mate/pages/signup_page2.dart';
 import 'package:task_mate/pages/signup_page3.dart';
 import 'package:task_mate/pages/signup_page4.dart';
+import 'package:task_mate/firebase/auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-class SignUpPage4 extends StatelessWidget {
-  SignUpPage4({super.key});
+class SignUpPage4 extends StatefulWidget {
+  final String username, dob, email;
 
+  const SignUpPage4({
+    Key? key,
+    required this.username,
+    required this.dob,
+    required this.email
+  }) : super(key: key);
+
+  @override
+  State<SignUpPage4> createState() => _SignUpPage4State();
+}
+
+class _SignUpPage4State extends State<SignUpPage4> {
+  String? errorMessage = '';
   //text editing controllers
   final passwordController = TextEditingController();
 
+  Future<void> createUserWithEmailAndPassword() async{
+    try {
+      await Auth().createUserWithEmailAndPassword(
+        email: widget.email,
+        password: passwordController.text,
+      );
+      Navigator.push(context, MaterialPageRoute(builder: (context) => SignInPage()));
+    } on FirebaseAuthException catch (e) {
+      errorMessage = e.message;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,8 +74,10 @@ class SignUpPage4 extends StatelessWidget {
                           //add functionality
                           Navigator.pop(
                             context,
-                            MaterialPageRoute(
-                                builder: (context) => SignUpPage3()),
+                            MaterialPageRoute(builder: (context) => SignUpPage3(
+                              username: widget.username,
+                              dob: widget.dob
+                            )),
                           );
                         },
                       ),
@@ -129,12 +157,7 @@ class SignUpPage4 extends StatelessWidget {
                   const SizedBox(height: 30),
 
                   MyButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => SignInPage()),
-                      );
-                    },
+                    onPressed: () async { await createUserWithEmailAndPassword();},
                     text: 'Continue',
                   ),
 
