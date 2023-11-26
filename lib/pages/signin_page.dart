@@ -4,16 +4,46 @@ import 'package:flutter/material.dart';
 import 'package:task_mate/components/mybutton.dart';
 import 'package:task_mate/components/textfield1.dart';
 import 'package:task_mate/pages/homepageubaid.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:task_mate/firebase/auth.dart';
 
-class SignInPage extends StatelessWidget {
+class SignInPage extends StatefulWidget {
   SignInPage({super.key});
+
+  @override
+  State<SignInPage> createState() => _SignInPageState();
+}
+
+class _SignInPageState extends State<SignInPage> {
+  String? errorMessage = '';
 
   //text editing controllers
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+
   //sign user in method (not yet implemented)
   //void signUserIn() {}
+  Future<void> signInWithEmailAndPassword() async {
+    try {
+      await Auth().signInWithEmailAndPassword(
+        email:  emailController.text,
+        password: passwordController.text,
+      );
+      //Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+    } on FirebaseAuthException catch(e) {
+      //TODO display error message on screen
+      errorMessage = e.message;
+    }
+  }
+
+  
 
   @override
   Widget build(BuildContext context) {
@@ -161,13 +191,7 @@ class SignInPage extends StatelessWidget {
           const SizedBox(height: 30),
 
           MyButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => HomePage()),
-              );
-            },
+            onPressed: signInWithEmailAndPassword,
             text: 'Sign In',
             ),
 

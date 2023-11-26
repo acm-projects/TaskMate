@@ -25,7 +25,8 @@ import 'pages/collab_contributors.dart';
 import 'pages/collab_attachments.dart';
 import 'pages/homepageubaid.dart';
 import 'pages/post_task.dart';
-// import 'package:task_mate/firebase_options.dart';
+import 'package:task_mate/firebase/firebase_options.dart';
+import 'package:task_mate/firebase/storage_service.dart';
 
 //late List<CameraDescription> cameras;
 void main() {
