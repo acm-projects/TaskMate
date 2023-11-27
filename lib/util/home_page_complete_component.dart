@@ -3,7 +3,7 @@ import 'package:task_mate/components/mybuttonrectangular2.dart';
 import 'package:task_mate/pages/post_task.dart';
 import 'package:task_mate/components/post.dart';
 import 'package:task_mate/pages/create_task.dart';
-//import 'package:task_mate/pages/camera_page.dart';
+import 'package:task_mate/pages/camera_page.dart';
 import 'package:task_mate/pages/profile_page.dart';
 
 class HomePagePageComponent extends StatelessWidget {
@@ -39,7 +39,7 @@ class HomePagePageComponent extends StatelessWidget {
                               backgroundImage: AssetImage('lib/images/ubaid_pfp.jpg'),
                             ),
                             onPressed: () {
-                              // add functionality
+                              //add functionality
                               // Navigator.push(
                               //   context,
                               //   MaterialPageRoute(builder: (context) => ProfilePage()),
@@ -345,10 +345,10 @@ class HomePagePageComponent extends StatelessWidget {
                         MyButton3(
                           text: '+ Create a New Post', 
                           onPressed: () {
-                            //Navigator.push(
-                              //context,
-                              //MaterialPageRoute(builder: (context) => testCamera()),
-                            //);
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => testCamera()),
+                            );
                           },
                           ),
 
