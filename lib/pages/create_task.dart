@@ -4,6 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:task_mate/components/mybuttonrectangular2.dart';
 import 'package:task_mate/components/textfield2.dart';
 import 'package:task_mate/components/choicebox.dart';
+import 'package:task_mate/models/task.dart';
+import 'package:task_mate/firebase/auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 
 class CreateTaskPage extends StatefulWidget {
   const CreateTaskPage({Key? key}) : super(key: key);
@@ -13,11 +17,32 @@ class CreateTaskPage extends StatefulWidget {
 }
 
 class _CreateTaskPageState extends State<CreateTaskPage> {
+  final User? user = Auth().currentUser;
+  String? errorMessage = "";
   DateTime _dateTime = DateTime.now();
   TimeOfDay _timeOfDay = TimeOfDay.now();
   int selectedChoice = 1;
 
-  void _CreateNewTask() {}
+  Future<void> _CreateNewTask() async {
+    Task newTask = Task(
+      name: taskNameController.text,
+      category: categoryController.text,
+      date: _dateTime,
+      time: _timeOfDay,
+      priority: selectedChoice,
+      description: descriptionController.text,
+    );
+
+    DatabaseReference ref = FirebaseDatabase.instance.ref("users/${Auth().currentUser?.uid}/tasks");
+    try {
+      await ref.push().set(newTask.toJson());
+      Navigator.pop(context);
+    }
+    on FirebaseException catch (e) {
+      errorMessage = e.message;
+    }
+  }
+
   void _showDatePicker() {
     showDatePicker(
       context: context,
@@ -45,6 +70,14 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
   final taskNameController = TextEditingController();
   final categoryController = TextEditingController();
   final descriptionController = TextEditingController();
+
+  @override
+  void dispose() {
+    taskNameController.dispose();
+    categoryController.dispose();
+    descriptionController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -347,7 +380,7 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
                     MyButton3(
                       text: 'Done', 
                       onPressed: () {
-                        Navigator.pop(context);
+                        _CreateNewTask();
                       },
                     ),
                     const SizedBox(height: 40),

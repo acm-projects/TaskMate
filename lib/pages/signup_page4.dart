@@ -11,6 +11,7 @@ import 'package:task_mate/pages/signup_page3.dart';
 import 'package:task_mate/pages/signup_page4.dart';
 import 'package:task_mate/firebase/auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 
 class SignUpPage4 extends StatefulWidget {
   final String username, dob, email;
@@ -31,15 +32,27 @@ class _SignUpPage4State extends State<SignUpPage4> {
   //text editing controllers
   final passwordController = TextEditingController();
 
-  Future<void> createUserWithEmailAndPassword() async{
+  Future<void> createUserWithEmailAndPassword() async {
     try {
       await Auth().createUserWithEmailAndPassword(
         email: widget.email,
         password: passwordController.text,
       );
-      Navigator.push(context, MaterialPageRoute(builder: (context) => SignInPage()));
+      initializeUser();
+      Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
     } on FirebaseAuthException catch (e) {
       errorMessage = e.message;
+    }
+  }
+
+  Future<void> initializeUser() async {
+    User? user = Auth().currentUser;
+    DatabaseReference ref = FirebaseDatabase.instance.ref("users/${Auth().currentUser?.uid}");
+    try {
+      await ref.set({"username" : widget.username, "dob" : widget.dob});
+    }
+    catch (e) {
+      print("Error while initializing user: $e");
     }
   }
 
