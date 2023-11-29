@@ -35,7 +35,7 @@ class _HomePage extends State<HomePage> {
           behavior: SnackBarBehavior.floating,
           backgroundColor: Colors.transparent,
           elevation: 0,
-          duration: const Duration(milliseconds : 500)
+          duration: const Duration(milliseconds : 800)
         ),
       );})
       ;
