@@ -4,11 +4,11 @@ import 'package:task_mate/pages/collaborate.dart';
 import 'package:task_mate/pages/profile_page.dart';
 import 'package:task_mate/pages/tasks.dart';
 import 'package:task_mate/util/home_page_complete_component.dart';
-
+import 'package:task_mate/components/customsnackbar.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
-
+  HomePage({Key? key, this.displayText=''}) : super(key: key);
+  final String displayText;
   @override
   _HomePage createState() => _HomePage();
 }
@@ -22,6 +22,25 @@ class _HomePage extends State<HomePage> {
     CollaboratePage(),
     ProfilePage(),
   ];
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if(widget.displayText != '') {
+      WidgetsBinding.instance.addPostFrameCallback((_) {ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: CustomSnackBar(
+            text: widget.displayText,
+          ),
+          behavior: SnackBarBehavior.floating,
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          duration: const Duration(milliseconds : 500)
+        ),
+      );})
+      ;
+    }
+  }
 
   void _onItemTapped(int index) {
     setState(() {

@@ -6,6 +6,7 @@ import 'package:task_mate/components/textfield1.dart';
 import 'package:task_mate/pages/homepageubaid.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:task_mate/firebase/auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 
 class SignInPage extends StatefulWidget {
   SignInPage({super.key});
@@ -36,7 +37,16 @@ class _SignInPageState extends State<SignInPage> {
         email:  emailController.text,
         password: passwordController.text,
       );
-      Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+      final User? user = Auth().currentUser;
+      DatabaseReference ref = FirebaseDatabase.instance.ref("users/${Auth().currentUser?.uid}");
+      String username = '';
+      try {
+        final snapshot = await ref.child("username").get();
+        username = snapshot.value as String;
+      }
+      catch (e) {
+      }
+      Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage(displayText : "Logged in as $username")));
     } on FirebaseAuthException catch(e) {
       //TODO display error message on screen
       errorMessage = e.message;

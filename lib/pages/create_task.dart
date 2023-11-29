@@ -43,7 +43,7 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
       else {
         await ref.update({"tasks" : [newTask.toJson()]});
       }
-      Navigator.pop(context);
+      Navigator.pop(context, "New task added");
     }
     on FirebaseException catch (e) {
       errorMessage = e.message;

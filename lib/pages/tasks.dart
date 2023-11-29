@@ -7,10 +7,10 @@ import 'package:task_mate/firebase/auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:task_mate/models/task_model.dart';
+import 'package:task_mate/components/customsnackbar.dart';
 
 class TasksPage extends StatefulWidget {
   const TasksPage({Key? key}) : super(key: key);
-
   @override
   State<TasksPage> createState() => _TasksPageState();
 }
@@ -28,7 +28,6 @@ class _TasksPageState extends State<TasksPage> {
     _activateListeners();
   }
 
-
   void _activateListeners() {
     _tasksStream = _ref.child("users/${Auth().currentUser?.uid}/tasks").onValue.listen((event) {
       List<dynamic> tasks = event.snapshot.value as List<dynamic>;
@@ -36,9 +35,7 @@ class _TasksPageState extends State<TasksPage> {
       for (int i = tasks.length - 1; i >= 0; i--) {
         _tasks.add(TaskMod.fromJson(tasks[i]));
       }
-      setState(() {
-        
-      });
+      setState(() {});
     });
   }
   
@@ -318,12 +315,25 @@ class _TasksPageState extends State<TasksPage> {
                   child: Padding(
                     padding: EdgeInsets.all(25),
                     child: FloatingActionButton.extended(
-                      onPressed: () {
-                        Navigator.push(
+                      onPressed: () async {
+                        final String result = await Navigator.push(
                           context,
                           MaterialPageRoute(
                               builder: (context) => CreateTaskPage()),
                         );
+                        if(result != '') {
+                          ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: CustomSnackBar(
+            text: result,
+          ),
+          behavior: SnackBarBehavior.floating,
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          duration: const Duration(milliseconds: 500),
+        )
+        );
+                        }
                       },
                       extendedPadding: EdgeInsets.symmetric(horizontal: 100),
                       shape: RoundedRectangleBorder(
