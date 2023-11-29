@@ -18,8 +18,8 @@ class _SignInPageState extends State<SignInPage> {
   String? errorMessage = '';
 
   //text editing controllers
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
+  final emailController = TextEditingController(text: "ubaid@gmail.com");
+  final passwordController = TextEditingController(text: "password");
 
   @override
   void dispose() {

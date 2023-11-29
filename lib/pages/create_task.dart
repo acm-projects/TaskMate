@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:task_mate/components/mybuttonrectangular2.dart';
 import 'package:task_mate/components/textfield2.dart';
 import 'package:task_mate/components/choicebox.dart';
-import 'package:task_mate/models/task.dart';
+import 'package:task_mate/models/task_model.dart';
 import 'package:task_mate/firebase/auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -13,18 +13,18 @@ class CreateTaskPage extends StatefulWidget {
   const CreateTaskPage({Key? key}) : super(key: key);
 
   @override
-  _CreateTaskPageState createState() => _CreateTaskPageState();
+  State<CreateTaskPage> createState() => _CreateTaskPageState();
 }
 
 class _CreateTaskPageState extends State<CreateTaskPage> {
   final User? user = Auth().currentUser;
   String? errorMessage = "";
   DateTime _dateTime = DateTime.now();
-  TimeOfDay _timeOfDay = TimeOfDay.now();
-  int selectedChoice = 1;
+  TimeOfDay _timeOfDay = TimeOfDay(hour : 11, minute : 59);
+  int selectedChoice = 3;
 
   Future<void> _CreateNewTask() async {
-    Task newTask = Task(
+    TaskMod newTask = TaskMod(
       name: taskNameController.text,
       category: categoryController.text,
       date: _dateTime,
@@ -32,10 +32,17 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
       priority: selectedChoice,
       description: descriptionController.text,
     );
-
-    DatabaseReference ref = FirebaseDatabase.instance.ref("users/${Auth().currentUser?.uid}/tasks");
+    DatabaseReference ref = FirebaseDatabase.instance.ref("users/${Auth().currentUser?.uid}");
     try {
-      await ref.push().set(newTask.toJson());
+      final snapshot = await ref.child("tasks").get();
+      if (snapshot.exists) {
+        List<dynamic> tasks = snapshot.value as List<dynamic>;
+        tasks.add(newTask.toJson());
+        await ref.update({"tasks" : tasks});
+      }
+      else {
+        await ref.update({"tasks" : [newTask.toJson()]});
+      }
       Navigator.pop(context);
     }
     on FirebaseException catch (e) {
@@ -67,9 +74,9 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
   //text editing controllers
   // final User? user = Auth().currentUser;
   // final DatabaseReference ref = FirebaseDatabase.instance.ref("users/${Auth().currentUser?.uid}");
-  final taskNameController = TextEditingController();
-  final categoryController = TextEditingController();
-  final descriptionController = TextEditingController();
+  final taskNameController = TextEditingController(text : "CS Homework");
+  final categoryController = TextEditingController(text : "Education");
+  final descriptionController = TextEditingController(text : "Finish CS 3345 homework");
 
   @override
   void dispose() {

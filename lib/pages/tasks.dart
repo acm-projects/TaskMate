@@ -1,10 +1,54 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:task_mate/components/task.dart';
 import 'package:task_mate/pages/create_task.dart';
+import 'package:task_mate/firebase/auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:task_mate/models/task_model.dart';
 
-class TasksPage extends StatelessWidget {
-  const TasksPage({super.key});
+class TasksPage extends StatefulWidget {
+  const TasksPage({Key? key}) : super(key: key);
 
+  @override
+  State<TasksPage> createState() => _TasksPageState();
+}
+class _TasksPageState extends State<TasksPage> {
+  final User? user = Auth().currentUser;
+  DatabaseReference _ref = FirebaseDatabase.instance.ref();
+  late StreamSubscription _tasksStream;
+  late List<TaskMod> _tasks = [];
+  String debugText = "Debug";
+
+  
+  @override
+  void initState() {
+    super.initState();
+    _activateListeners();
+  }
+
+
+  void _activateListeners() {
+    _tasksStream = _ref.child("users/${Auth().currentUser?.uid}/tasks").onValue.listen((event) {
+      List<dynamic> tasks = event.snapshot.value as List<dynamic>;
+      _tasks.clear();
+      for (int i = tasks.length - 1; i >= 0; i--) {
+        _tasks.add(TaskMod.fromJson(tasks[i]));
+      }
+      setState(() {
+        
+      });
+    });
+  }
+  
+
+  @override
+  void deactivate() {
+    _tasksStream.cancel();
+    super.deactivate();
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -248,41 +292,25 @@ class TasksPage extends StatelessWidget {
                       )),
                     ),
                     const SizedBox(height: 5),
-                    Task(
-                        priority: 'High Priority',
-                        category: 'Education',
-                        deadline: '12/4/23',
-                        taskName: 'CS Homework'),
-                    Task(
-                        priority: 'High Priority',
-                        category: 'Work',
-                        deadline: '11/29/23',
-                        taskName: 'Apply for internships'),
-                    Task(
-                        priority: 'Low Priority',
-                        category: 'Home',
-                        deadline: '12/5/23',
-                        taskName: 'Clean room'),
-                    Task(
-                        priority: 'High Priority',
-                        category: 'Work',
-                        deadline: '11/27/23',
-                        taskName: 'Weekly Shift'),
-                    Task(
-                        priority: 'Medium Priority',
-                        category: 'Education',
-                        deadline: '11/18/23',
-                        taskName: 'Discrete Homework'),
-                    Task(
-                        priority: 'Medium Priority',
-                        category: 'Education',
-                        deadline: '12/2/23',
-                        taskName: 'Advisor Meeting'),
-                    Task(
-                        priority: 'High Priority',
-                        category: 'Education',
-                        deadline: '11/27/23',
-                        taskName: 'Calc DHW'),
+                    Container(
+                      height: 1000.0,
+                      padding: const EdgeInsets.all(8),
+                      child: ListView.builder(
+                      scrollDirection: Axis.vertical,
+                      itemCount: _tasks.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        //return _tasks.length == 0 ?
+                        //const Center(child:Text("No tasks available")) :
+                        return Task(
+                          priority: _tasks[index].priorityAsString(),
+                          category: _tasks[index].category,
+                          deadline: _tasks[index].dateAsString(),
+                          taskName: _tasks[index].name,
+                        );
+                      }
+                    ),
+                    )
+                    
                   ],
                 ),
                 Align(
