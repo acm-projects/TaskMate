@@ -62,7 +62,6 @@ class _TasksPageState extends State<TasksPage> {
             child: Stack(
               children: [
                 ListView(
-                  padding: EdgeInsets.only(right: 25, left: 25),
                   children: [
                     Row(children: [
                       IconButton(
