@@ -18,7 +18,7 @@ class _TasksPageState extends State<TasksPage> {
   final User? user = Auth().currentUser;
   DatabaseReference _ref = FirebaseDatabase.instance.ref();
   late StreamSubscription _tasksStream;
-  late List<TaskMod> _tasks = [];
+  late List<TaskMod> _tasks = List.empty(growable: true);
   String debugText = "Debug";
 
   
@@ -30,15 +30,22 @@ class _TasksPageState extends State<TasksPage> {
 
   void _activateListeners() {
     _tasksStream = _ref.child("users/${Auth().currentUser?.uid}/tasks").onValue.listen((event) {
-      List<dynamic> tasks = event.snapshot.value as List<dynamic>;
+      List<dynamic> tasksFromDatabase = event.snapshot.value as List<dynamic>;
       _tasks.clear();
-      for (int i = tasks.length - 1; i >= 0; i--) {
-        _tasks.add(TaskMod.fromJson(tasks[i]));
+      for (int i = tasksFromDatabase.length - 1; i >= 0; i--) {
+        TaskMod newTask = TaskMod(
+          name : tasksFromDatabase[i]["name"],
+          category : tasksFromDatabase[i]["category"],
+          date: DateTime.fromMillisecondsSinceEpoch(tasksFromDatabase[i]["date"]),
+          time: TimeOfDay.fromDateTime(DateTime.fromMillisecondsSinceEpoch(tasksFromDatabase[i]["time"])),
+          priority: tasksFromDatabase[i]["priority"],
+          description: tasksFromDatabase[i]["description"],
+        );
+        _tasks.add(newTask);
       }
       setState(() {});
     });
   }
-  
 
   @override
   void deactivate() {
@@ -295,9 +302,9 @@ class _TasksPageState extends State<TasksPage> {
                       scrollDirection: Axis.vertical,
                       itemCount: _tasks.length,
                       itemBuilder: (BuildContext context, int index) {
-                        //return _tasks.length == 0 ?
-                        //const Center(child:Text("No tasks available")) :
-                        return Task(
+                        return _tasks.length == 0 ?
+                        const Center(child:Text("No tasks available")) :
+                        Task(
                           priority: _tasks[index].priorityAsString(),
                           category: _tasks[index].category,
                           deadline: _tasks[index].dateAsString(),

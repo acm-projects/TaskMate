@@ -37,8 +37,12 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
       final snapshot = await ref.child("tasks").get();
       if (snapshot.exists) {
         List<dynamic> tasks = snapshot.value as List<dynamic>;
-        tasks.add(newTask.toJson());
-        await ref.update({"tasks" : tasks});
+        List<dynamic> newTasks = List.empty(growable : true);
+        for (int i = 0; i < tasks.length; i++) {
+          newTasks.add(tasks[i]);
+        }
+        newTasks.add(newTask.toJson());
+        await ref.update({"tasks" : newTasks});
       }
       else {
         await ref.update({"tasks" : [newTask.toJson()]});
